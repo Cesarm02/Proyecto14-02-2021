@@ -1,0 +1,158 @@
+@import url("app.css");
+.sidebar {
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top: 55px; /*55*/
+    padding: 65px 0 0;
+    height: 100%;
+    width: 200px;
+    background: #0407a5f5;
+    border-right: 1px solid rgb(5, 1, 1);
+    text-align: center;
+ 
+}
+
+.sidebar ul li:hover,
+.submenu ul li:hover {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar ul li {
+    display: block;
+}
+
+.sidebar ul li:hover,
+ul.submenu {
+    background-color: #0407a5f5;
+}
+
+.sidebar ul li a:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* Color del sidebar*/
+.sidebar ul li a,
+ul.submenu li a {
+    color: #ffffff;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: left;
+}
+
+.sidebar ul li a span,
+.sidebar ul li i {
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-shadow: 0 1px rgba(0, 0, 0, 1);
+}
+
+.sidebar ul li a i {
+    color: #aeb2b7;
+    padding: 15px 22px;
+    text-align: center;
+}
+
+ul.submenu {
+    display: none;
+    position: relative;
+}
+
+ul.submenu li a:hover {
+    background-color: #7ACBEE;
+}
+
+ul.submenu li a {
+    padding-left: 45px;
+}
+/* Lineas de slider*/
+ul.submenu li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    border: 1px dotted #d7d7d7;
+    border-width: 0 0 0 1px;
+}
+
+ul.submenu li a:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 7px;
+    left: 25px;
+    top: 18px;
+    border-top: 1px dotted #d7d7d7;
+}
+#btn-menu
+{
+    display: none;
+}
+header label
+{
+    display: none;
+    width: 30%;
+}
+
+.lnr{
+    line-height: 3;
+}
+
+@media(max-width:1296px)/*1296*/
+{ 
+    
+    .sidebar {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 55px; /*55*/
+        padding: 65px 0 0;
+        height: 100%;
+        width: 0px;
+        background: #04a58af5;
+        border-right: 1px solid rgb(5, 1, 1);
+        text-align: center;
+    }
+
+    header label
+    {
+        bottom: 40%;
+        display:block;
+        z-index: 2;
+        position: absolute; 
+        top: -5%;
+        left: 20px;
+    }
+
+    /* #btn-menu{
+        display:block;
+    } */
+
+    #btn-menu{
+        display:block;
+
+    }
+
+    /* SE TOMA LA ACTIVACION DEL CHECKED MAS NO TOMA LA ACTIVACION DEL MENU*/
+    #btn-menu:checked{
+
+        display:none;
+    }
+
+}
+
+

@@ -1,0 +1,52 @@
+
+Route::get('/prueba', function () {
+
+    // return    Role::create([
+    //     'nombre' => 'Admin',
+    //     'slug' => 'admin',
+    //     'descripcion' => 'Administrador',
+    //     'acceso' => 'si',
+    // ]);
+
+    // return    Role::create([
+    //     'nombre' => 'Invitado',
+    //     'slug' => 'invitado',
+    //     'descripcion' => 'invitado',
+    //     'acceso' => 'no',
+    // ]);
+
+    // return    Role::create([
+    //     'nombre' => 'Test',
+    //     'slug' => 'test',
+    //     'descripcion' => 'Test',
+    //     'acceso' => 'no',
+    // ]);
+
+    // $user = User::find(1);
+
+    // $user->roles()->attach([1, 3]); AGREGAR EL ROL AL USUARIO 
+    // $user->roles()->detach([3]);  ELIMINAR El rol
+
+    // $user->roles()->sync([1,3]);
+
+    // return $user->roles;
+
+    // Permiso::create([
+    //     'nombre'=> 'Crear producto',
+    //     'slug' => 'producto.crear',
+    //     'descripcion' => 'Un usuario puede crear un producto'
+    // ]);
+
+    // Permiso::create([
+    //     'nombre' => 'Listar producto',
+    //     'slug' => 'producto.index',
+    //     'descripcion' => 'Un usuario puede listar los producto'
+    // ]);
+
+        $role = Role::find(1);
+
+        $role->permisos()->sync([1,2]);
+
+        return $role->permisos;
+
+});

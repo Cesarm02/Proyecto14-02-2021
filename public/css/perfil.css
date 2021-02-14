@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contenedor {
+    margin-top: 30px;
+    background-color: #caccd4;
+    margin-bottom: 30px;
+    
+}
+
+.page {
+    margin-top: 10px;
+    background-color: #f8f8f6;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+h1{
+    color: #d5a5a0;
+}
+
+h1>small {
+    color: #323230;
+}
+
+h3{
+    color: #323230;
+}
+
+.img-responsive {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin: 30px 0 10px 40px;
+}
+
+@media only screen and (min-height: 320px) and ( max-width: 768px) {
+    .img-responsive {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
+.text-center {
+    padding: 30px 0 10px 40px;
+}
+
+@media only screen and (min-height: 320px) and ( max-width: 768px) {
+    .text-center {
+        padding-right: 40px;
+    }
+}
+
+.vertical {
+    border-right: 1px solid mediumpurple;
+}
+
+#intro {
+    padding: 10px 20px 5px 50px;
+}
+#intro>h5>small {
+   color: #d5a5a0;
+     font-weight: bold;
+}
+
+.progress-radial,
+.progress-radial * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.progress-radial {
+    float: left;
+    margin-right: 4%;
+    position: relative;
+    width: 20%;
+    border-radius: 50%;
+}
+.progress-radial:first-child {
+    margin-left: 4%;
+}
+.progress-radial .overlay {
+    position: absolute;
+    width: 80%;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.progress-radial .overlay p {
+    position: absolute;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    margin-top: -20px;
+}
+.progress-15 {
+    background-image: -webkit-linear-gradient(0deg, aliceblue 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-linear-gradient(306deg, mediumpurple 50%, aliceblue 50%, aliceblue);
+    background-image: linear-gradient(90deg, aliceblue 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg,  #d5a5a0 50%, aliceblue 50%, aliceblue);
+}
+.progress-80 {
+    background-image: -webkit-linear-gradient(72deg, #38b16b 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-linear-gradient(180deg, mediumpurple 50%, aliceblue 50%, aliceblue);
+    background-image: linear-gradient(18deg,  #d5a5a0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg,  #d5a5a0 50%, aliceblue 50%, aliceblue);
+}
+.progress-65 {
+    background-image: -webkit-linear-gradient(126deg, #d5a5a0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-linear-gradient(180deg, mediumpurple 50%, aliceblue 50%, aliceblue);
+    background-image: linear-gradient(-36deg,  #d5a5a0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #d5a5a0 50%, aliceblue 50%, aliceblue);
+}
+.progress-55 {
+    background-image: -webkit-linear-gradient(162deg,  #d5a5a0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), -webkit-linear-gradient(180deg,  #d5a5a0 50%, aliceblue 50%, aliceblue);
+    background-image: linear-gradient(-72deg,  #d5a5a0 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg,  #d5a5a0 50%, aliceblue 50%, aliceblue);
+}
+#dets {
+    padding: 10px 20px 5px 85px;
+    text-transform: uppercase;
+  
+}
+@media only screen and (min-height: 320px) and ( max-width: 768px) {
+    #dets {
+        padding: 60px;
+        padding-bottom: 20px;
+    }
+}
+
+h4>small{
+    text-transform: none;
+      padding-left: 60px;
+  font-weight: bold;
+}
+
+
+@media only screen and (min-height: 320px) and ( max-width: 768px) {
+    h4>small {
+       padding: 0;
+    }
+}
+
+.text {
+    font-size: 13px;
+    font-style: oblique;
+    padding-left: 5px;
+}
+
+
+#socials {
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+
+@media only screen and (min-height: 320px) and ( max-width: 768px) {
+    #socials {
+        padding: 0;
+        margin: 15px;
+    }
+}
+
+/* a {
+    padding-left: 80px;
+    font-weight: lighter;
+    font-size: 20px;
+    color: #323230
+} */
+a:hover{
+  text-decoration: none;
+  color: #d5a5a0;
+}
+
+#edu {
+    padding: 15px 20px 5px 50px;
+    text-transform: uppercase;
+}
+
+#edu>small {
+    text-transform: capitalize;
+    font-style: italic;
+   color: #d5a5a0;
+}
+
+#exp {
+    padding: 10px 20px 5px 50px;
+}
+
+#exp>h5>small {
+   color: #d5a5a0;
+     font-weight: bold;
+}
+
+#ref {
+     padding: 15px 20px 5px 50px;
+    text-transform: uppercase; 
+}
+
+#ref>p{
+    font-weight: lighter;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+
+
+
+

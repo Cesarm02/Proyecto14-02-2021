@@ -1,0 +1,37 @@
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.controls {
+  margin-bottom: 10px;
+}
+
+.collapse-group {
+  padding: 10px;
+  border: 1px solid darkgrey;
+  margin-bottom: 10px;
+}
+
+.shadow {
+  transition: all 0.5s ease;
+}
+
+.shadow:hover {
+  background: #A6CCFB;
+  color: #fff !important;
+}
+
+.card-header:hover:before {
+width: 100%;
+}
+
+.panel-title .trigger:before {
+   content: "\2212";
+  font-family: 'Glyphicons Halflings';
+  vertical-align: text-bottom;
+}
+
+.panel-title .trigger.collapsed:before {
+  content: "\002b";
+}
