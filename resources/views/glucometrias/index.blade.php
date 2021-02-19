@@ -41,17 +41,17 @@
                 <td> {{$glucometria->hora}}</td>
                 <td> {{$glucometria->tipo_hora}} {{$glucometria->tipo}}</td>
                 @if($glucometria->tipo_hora == "antes" && $glucometria->valor_glucometria >=100 && $glucometria->valor_glucometria <=120)
-                    <td style='background-color:RGB(72,201,176)' > {{$glucometria->valor_glucometria}}</td>
+                    <td style='background-color:RGB(72,201,176)' > {{$glucometria->valor_glucometria}}[Ideal]</td>
                 @elseif($glucometria->tipo_hora == "antes" && ($glucometria->valor_glucometria >=90 && $glucometria->valor_glucometria <=99) || ($glucometria->valor_glucometria >=121 && $glucometria->valor_glucometria <=130))
-                    <td style='background-color:RGB(255,128,0)' > {{$glucometria->valor_glucometria}}</td>
+                    <td style='background-color:RGB(255,128,0)' > {{$glucometria->valor_glucometria}}[inferior al normal]</td>
                 @elseif($glucometria->tipo_hora == "antes" && ( $glucometria->valor_glucometria <=89 || $glucometria->valor_glucometria >=131 ))
-                    <td style='background-color:RED' > {{$glucometria->valor_glucometria}}</td>
+                    <td style='background-color:RED' > {{$glucometria->valor_glucometria}}[Alto]</td>
                 @elseif($glucometria->tipo_hora == "despues" && $glucometria->valor_glucometria == 180)
-                    <td style='background-color:RGB(72,201,176)' > {{$glucometria->valor_glucometria}}</td>
+                    <td style='background-color:RGB(72,201,176)' > {{$glucometria->valor_glucometria}}[Ideal]</td>
                 @elseif($glucometria->tipo_hora == "despues" && ($glucometria->valor_glucometria >=170 && $glucometria->valor_glucometria <=179) || ($glucometria->valor_glucometria >=181 && $glucometria->valor_glucometria <=190))
-                    <td style='background-color:RGB(255,128,0)' > {{$glucometria->valor_glucometria}}</td>
+                    <td style='background-color:RGB(255,128,0)' > {{$glucometria->valor_glucometria}}[Superior al normal]</td>
                 @elseif($glucometria->tipo_hora == "despues" && ( $glucometria->valor_glucometria <=169 || $glucometria->valor_glucometria >=191 ))
-                    <td style='background-color:RED' > {{$glucometria->valor_glucometria}}</td>
+                    <td style='background-color:RED' > {{$glucometria->valor_glucometria}}[Alto]</td>
                 @endif
                 <td > <a href="{{route('glucometrias.show', $glucometria->id)}}" class="btn btn-outline-info "> Ver </a></td>
                 <td > <a href="{{route('glucometrias.edit', $glucometria->id)}}" class="btn btn-outline-success " > Editar </a></td>

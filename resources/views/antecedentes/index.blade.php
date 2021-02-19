@@ -92,14 +92,16 @@
     <div class="card-header shadow" id="{{$alergia->id}}" role="button" data-toggle="collapse" href="#collapse{{$alergia->id}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
       <h5 class="panel-title">
         <a>
-          Collapsible Group Item #1
+          {{$alergia->nombre}}
         </a>
       </h5>
     </div>
   
     <div id="collapse{{$alergia->id}}" class="panel-collapse collapse" aria-labelledby="{{$alergia->id}}" data-parent="#accordionExample">
       <div class= "card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        {{$alergia->descripcion}}
+        <br>
+        <small> Fecha: {{$alergia->fecha_diagnostico}}</small>
       </div>
     </div>
     @endforeach
@@ -111,22 +113,28 @@
   <div class="card" style="border-radius: 10px;">
     <div class="card-header" id="heading" style="background-color: #DCDCDC;">
       <h4 class="mb-0">
-        vacunas
+        Vacunas
       </h4>
     </div>
-    <div class="card-header shadow" id="headingOne" role="button" data-toggle="collapse" href="#collapseTest" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
+    @foreach($vacunas as $vacuna)
+      
+    <div class="card-header shadow" id="{{$vacuna->id}}" role="button" data-toggle="collapse" href="#collapse{{$vauna->id}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
       <h5 class="panel-title">
         <a>
-          Collapsible Group Item #1
+          {{$vacuna->descripcion}}
         </a>
       </h5>
     </div>
   
-    <div id="collapseTest" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapse{{$vauna->id}}" class="panel-collapse collapse" aria-labelledby="{{$vacuna->id}}" data-parent="#accordionExample">
       <div class= "card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        {{$vacuna->descripcion}}
+        <br>
+        <small> Fecha: {{$vacuna->fecha_diagnostico}}</small>
       </div>
     </div>
+    @endforeach
+
   </div>
 </div>
 
@@ -137,19 +145,25 @@
         Tratamientos
       </h4>
     </div>
-    <div class="card-header shadow" id="headingOne" role="button" data-toggle="collapse" href="#collapseTest" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
-      <h5 class="panel-title">
-        <a>
-          Collapsible Group Item #1
-        </a>
-      </h5>
-    </div>
-  
-    <div id="collapseTest" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class= "card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    @foreach($tratamientos as $tratamiento)
+        
+      <div class="card-header shadow" id="{{$tratamiento->id}}" role="button" data-toggle="collapse" href="#collapse{{$tratamiento}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
+        <h5 class="panel-title">
+          <a>
+            {{$tratamiento->nombre}}
+          </a>
+        </h5>
       </div>
-    </div>
+      
+      <div id="collapse{{$tratamiento}}" class="panel-collapse collapse" aria-labelledby="{{$tratamiento->id}}" data-parent="#accordionExample">
+        <div class= "card-body">
+          {{$tratamiento->descripcion}}
+          <br>
+          <small> Fecha : {{$tratamiento->fecha_diagnostico}}</small>
+        </div>
+      </div>
+    @endforeach
+  
   </div>
 </div>
 

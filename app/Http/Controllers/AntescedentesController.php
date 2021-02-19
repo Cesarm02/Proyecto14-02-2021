@@ -26,7 +26,7 @@ class AntescedentesController extends Controller
         $intervenciones = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'intervenciones_quirúrgicas')->get();
         
         // dd($personal);
-        return view('antecedentes.index', compact('personales', 'familiares', 'alergias'));
+        return view('antecedentes.index', compact('personales', 'familiares', 'alergias', 'vacunas', 'tratamientos'));
     }
 
     /**
