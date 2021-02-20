@@ -7,7 +7,7 @@
             <li>
                 <a href="#" class=" submenu-toggle fas fa-id-badge"><font>Perfil</font></a>
                 <ul class="nav submenu">
-                    <li><small> <a href="{{route('antescedentes.index')}}"> Antecedentes personales </a> </small> </li>
+                    <li><small> <a href="{{route('antecedentes.index')}}"> Antecedentes personales </a> </small> </li>
                     <li><small> <a href="{{route('peso.index')}}" class=""> Peso y altura </a> </small></li>
                 </ul>
             </li>

@@ -96,4 +96,4 @@ Route::resource('/alimentos', 'AlimentosController')->names('alimentos');
 //Ruta de Ejercicios
 Route::resource('/ejercicio', 'EjercicioController')->names('ejercicio');
 //Ruta antescedentes
-Route::resource('/antescedentes', 'AntescedentesController')->names('antescedentes');
+Route::resource('/antecedentes', 'AntescedentesController')->names('antecedentes');

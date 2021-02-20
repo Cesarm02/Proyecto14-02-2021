@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AntecedentesPersonale extends Model
 {
     protected $fillable = [
-        'tipo', 'fecha_diagnostico','descripcion', 'informacion_user_id'
+        'tipo', 'fecha_diagnostico','descripcion', 'informacion_user_id', 'nombre'
     ];
     public function informacion_user()
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Modelos\ControlCambios;
 use Illuminate\Support\Facades\Auth;
 use App\Modelos\AntecedentesPersonale;
 
@@ -26,7 +27,7 @@ class AntescedentesController extends Controller
         $intervenciones = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'intervenciones_quirúrgicas')->get();
         
         // dd($personal);
-        return view('antecedentes.index', compact('personales', 'familiares', 'alergias', 'vacunas', 'tratamientos'));
+        return view('antecedentes.index', compact('personales', 'familiares', 'alergias', 'vacunas', 'tratamientos', 'intervenciones'));
     }
 
     /**
@@ -36,7 +37,8 @@ class AntescedentesController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('haveaccess', 'antecedentes.index');
+        return view('antecedentes.create');
     }
 
     /**
@@ -48,17 +50,26 @@ class AntescedentesController extends Controller
     public function store(Request $request)
     {
         //
-    }
+        $this->authorize('haveaccess', 'antecedentes.store');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $request->validate([
+            'tipo' => 'required',
+            'fecha_diagnostico' => 'required',
+            'nombre' => 'required',
+        ]);
+        $antecedente = AntecedentesPersonale::create([
+            'informacion_user_id' => auth()->user()->id,
+        ] + $request->all());
+
+        ControlCambios::create([
+            'fecha_hora' => date('Y/m/d H:i:s', time()),
+            'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla antecedentes_personales',
+            'id_usuario' => Auth()->user()->id
+        ]);
+
+        return redirect()->route('antecedentes.index')
+        ->with('status_success', 'Antecedente registrado correctamente');
+   
     }
 
     /**
@@ -70,6 +81,9 @@ class AntescedentesController extends Controller
     public function edit($id)
     {
         //
+        $this->authorize('haveaccess', 'antecedentes.edit');
+        $antecedente = AntecedentesPersonale::findOrFail($id);
+        return view('antecedentes.edit', compact('antecedente'));
     }
 
     /**
@@ -82,6 +96,26 @@ class AntescedentesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->authorize('haveaccess', 'antecedentes.update');
+
+        $request->validate([
+            'tipo' => 'required',
+            'fecha_diagnostico' => 'required',
+            'nombre' => 'required',
+        ]);
+
+        $antecedente = AntecedentesPersonale::findOrFail($id);
+        $antecedente->update($request->all());
+
+        ControlCambios::create([
+            'fecha_hora' => date('Y/m/d H:i:s', time()),
+            'descripcion' => 'Se crea registro ' . $antecedente['id'] . ' en la tabla antecedentes_personales',
+            'id_usuario' => Auth()->user()->id
+        ]);
+
+        return redirect()->route('antecedentes.index')
+        ->with('status_success', 'Antecedente editado correctamente');
+   
     }
 
     /**
@@ -93,5 +127,17 @@ class AntescedentesController extends Controller
     public function destroy($id)
     {
         //
+        $this->authorize('haveaccess', 'antecedentes.store');
+        $antecedente = AntecedentesPersonale::findOrFail($id);
+        ControlCambios::create([
+            'fecha_hora' => date('Y/m/d H:i:s', time()),
+            'descripcion' => 'Se elimina registro ' . $id . ' en la tabla antecedente_personales',
+            'id_usuario' => Auth()->user()->id
+        ]);
+        $antecedente->delete();
+        return redirect()->route('antecedentes.index')
+        ->with('status_success', 'antecedente eliminada correctamente');
+ 
+
     }
 }

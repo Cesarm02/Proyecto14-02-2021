@@ -7,7 +7,6 @@
         <li class="breadcrumb-item"><a href="{{route('inicio')}}">Home</a></li>
         <li class="breadcrumb-item active"><a href="{{route('ejercicio.index')}}">Ejercicios</a></li>
         <li class="breadcrumb-item active" aria-current="page">Registrar Ejercicios</li>
-
     </ol>
     </nav>
     <div class="row justify-content-center">

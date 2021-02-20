@@ -16,8 +16,8 @@
     </nav>
     <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de <strong> Antecedentes </strong> 
-            @can('haveaccess', 'ejercicio.create')
-                <a class="btn btn-primary float-right" href="{{route('ejercicio.create')}}">Agregar Antecedentes</a>
+            @can('haveaccess', 'antecedentes.create')
+                <a class="btn btn-primary float-right" href="{{route('antecedentes.create')}}">Agregar Antecedentes</a>
             @endcan
         </h3>
     </div>
@@ -43,6 +43,13 @@
           {{$personal->descripcion}}
           <br>
           <small> Fecha : {{$personal->fecha_diagnostico}}</small>
+          <br>
+          <form action="{{route('antecedentes.destroy', $personal->id)}}" method="POST">
+            <a class="btn btn-outline-success" href="{{route('antecedentes.edit',$personal->id)}}"> Editar </a>
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el dato{{$personal->nombre}}?')">Eliminar</button>
+          </form>
         </div>
       </div>
       
@@ -74,6 +81,13 @@
           {{$familiar->descripcion}}
           <br>
           <small> Fecha : {{$personal->fecha_diagnostico}}</small>
+          <br>
+          <form action="{{route('antecedentes.destroy', $familiar->id)}}" method="POST">
+            <a class="btn btn-outline-success" href="{{route('antecedentes.edit',$familiar->id)}}"> Editar </a>
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el dato{{$familiar->nombre}}?')">Eliminar</button>
+          </form>
       </div>
     </div>
     @endforeach
@@ -102,6 +116,13 @@
         {{$alergia->descripcion}}
         <br>
         <small> Fecha: {{$alergia->fecha_diagnostico}}</small>
+        <br>
+          <form action="{{route('antecedentes.destroy', $alergia->id)}}" method="POST">
+            <a class="btn btn-outline-success" href="{{route('antecedentes.edit',$alergia->id)}}"> Editar </a>
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el dato{{$alergia->nombre}}?')">Eliminar</button>
+          </form>
       </div>
     </div>
     @endforeach
@@ -118,19 +139,26 @@
     </div>
     @foreach($vacunas as $vacuna)
       
-    <div class="card-header shadow" id="{{$vacuna->id}}" role="button" data-toggle="collapse" href="#collapse{{$vauna->id}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
+    <div class="card-header shadow" id="{{$vacuna->id}}" role="button" data-toggle="collapse" href="#collapse{{$vacuna->id}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
       <h5 class="panel-title">
         <a>
-          {{$vacuna->descripcion}}
+          {{$vacuna->nombre}}
         </a>
       </h5>
     </div>
   
-    <div id="collapse{{$vauna->id}}" class="panel-collapse collapse" aria-labelledby="{{$vacuna->id}}" data-parent="#accordionExample">
+    <div id="collapse{{$vacuna->id}}" class="panel-collapse collapse" aria-labelledby="{{$vacuna->id}}" data-parent="#accordionExample">
       <div class= "card-body">
         {{$vacuna->descripcion}}
         <br>
         <small> Fecha: {{$vacuna->fecha_diagnostico}}</small>
+          <br>
+          <form action="{{route('antecedentes.destroy', $vacuna->id)}}" method="POST">
+            <a class="btn btn-outline-success" href="{{route('antecedentes.edit',$vacuna->id)}}"> Editar </a>
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el dato{{$vacuna->nombre}}?')">Eliminar</button>
+          </form>
       </div>
     </div>
     @endforeach
@@ -147,7 +175,7 @@
     </div>
     @foreach($tratamientos as $tratamiento)
         
-      <div class="card-header shadow" id="{{$tratamiento->id}}" role="button" data-toggle="collapse" href="#collapse{{$tratamiento}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
+      <div class="card-header shadow" id="{{$tratamiento->id}}" role="button" data-toggle="collapse" href="#collapse{{$tratamiento->id}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
         <h5 class="panel-title">
           <a>
             {{$tratamiento->nombre}}
@@ -155,11 +183,18 @@
         </h5>
       </div>
       
-      <div id="collapse{{$tratamiento}}" class="panel-collapse collapse" aria-labelledby="{{$tratamiento->id}}" data-parent="#accordionExample">
+      <div id="collapse{{$tratamiento->id}}" class="panel-collapse collapse" aria-labelledby="{{$tratamiento->id}}" data-parent="#accordionExample">
         <div class= "card-body">
           {{$tratamiento->descripcion}}
           <br>
           <small> Fecha : {{$tratamiento->fecha_diagnostico}}</small>
+                    <br>
+          <form action="{{route('antecedentes.destroy', $tratamiento->id)}}" method="POST">
+            <a class="btn btn-outline-success" href="{{route('antecedentes.edit',$tratamiento->id)}}"> Editar </a>
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el dato{{$tratamiento->nombre}}?')">Eliminar</button>
+          </form>
         </div>
       </div>
     @endforeach
@@ -174,19 +209,31 @@
         Intervenciones quirúrgicas
       </h4>
     </div>
-    <div class="card-header shadow" id="headingOne" role="button" data-toggle="collapse" href="#collapseTest" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
-      <h5 class="panel-title">
-        <a>
-          Collapsible Group Item #1
-        </a>
-      </h5>
-    </div>
-  
-    <div id="collapseTest" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class= "card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    @foreach($intervenciones as $intervencion)
+      <div class="card-header shadow" id="{{$intervencion->id}}" role="button" data-toggle="collapse" href="#collapse{{$intervencion->id}}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed" style="text-decoration: none;">
+        <h5 class="panel-title">
+          <a>
+            {{$intervencion->nombre}}
+          </a>
+        </h5>
       </div>
-    </div>
+    
+      <div id="collapse{{$intervencion->id}}" class="panel-collapse collapse" aria-labelledby="{{$intervencion->id}}" data-parent="#accordionExample">
+        <div class= "card-body">
+          {{$intervencion->descripcion}}
+          <br>
+          <small> Fecha: {{$intervencion->fecha_diagnostico}}</small>
+          <br>
+          <form action="{{route('antecedentes.destroy', $intervencion->id)}}" method="POST">
+            <a class="btn btn-outline-success" href="{{route('antecedentes.edit',$intervencion->id)}}"> Editar </a>
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el dato{{$intervencion->nombre}}?')">Eliminar</button>
+          </form>
+        </div>
+      </div>
+        
+    @endforeach
   </div>
 </div>
     

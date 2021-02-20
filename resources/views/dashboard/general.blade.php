@@ -112,7 +112,7 @@
                 </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
+                <small class="text-muted"><a href="{{route('antecedentes.index')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
             <div class="card">
