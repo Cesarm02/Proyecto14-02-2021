@@ -4,8 +4,9 @@ use App\User;
 use App\Modelos\Role;
 use App\Modelos\Permiso;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,3 +98,10 @@ Route::resource('/alimentos', 'AlimentosController')->names('alimentos');
 Route::resource('/ejercicio', 'EjercicioController')->names('ejercicio');
 //Ruta antescedentes
 Route::resource('/antecedentes', 'AntescedentesController')->names('antecedentes');
+// RUta insulinas
+Route::resource('/insulinas', 'InsulinasController')->names('insulinas');
+
+
+Route::get('storage-link', function(){
+    Artisan::call('storage:link');
+});

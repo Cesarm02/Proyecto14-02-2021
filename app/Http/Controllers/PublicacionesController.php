@@ -57,9 +57,12 @@ class PublicacionesController extends Controller
             'informacion_user_id' => auth()->user()->id
         ] + $request->all());
 
+        // $ruta = $request->file('file')->store('articulos', 'public');
+
         if($request->file('file'))
         {
             $articulos->imagen = $request->file('file')->store('articulos', 'public');
+            // dd($ruta);
             $articulos->save();
         }
 

@@ -52,6 +52,16 @@ return [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
+            // 'permissions' => [
+            //     'articulos' => [
+            //         'public' => 0664,
+            //         'private' => 0600,
+            //     ],
+            //     'diabetes' => [
+            //         'public' => 0775,
+            //         'private' => 0700,
+            //     ],
+            // ],
             'visibility' => 'public',
         ],
 

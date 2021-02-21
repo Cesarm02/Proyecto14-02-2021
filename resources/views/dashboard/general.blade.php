@@ -174,8 +174,25 @@
                 <div class="card-footer">
                 <small class="text-muted"><a href="{{route('ejercicio.index')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
+                </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-syringe"></i> Insulinas</h5>
+                <p class="card-text">
+                Este icono hace referencia a la sección referente a las insulinas utiizadas por el paciente o el registro historico de ellas
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('insulinas.index')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
             </div>
-                        <div class="card">
+            
+        </div>
+
+        <br>
+        <br>
+          <div class="card-deck">
+            <div class="card">
                 <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-comments"></i> Foro</h5>
                 <p class="card-text">
@@ -186,12 +203,6 @@
                 <small class="text-muted"><a href="{{route('articulo')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
-        </div>
-
-        <br>
-        <br>
-          <div class="card-deck">
-
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title"><i class="far fa-newspaper"></i> Artículos</h5>
@@ -215,17 +226,7 @@
                 <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-file"></i> Reportes</h5>
-                <p class="card-text">
-                Este icono hace referencia a la sección referente a los reportes que se pueden generar con los datos alimentados en el sistema
-                </p>
-                </div>
-                <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
-                </div>
-            </div>
+
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title"> <i class="far fa-clock"></i>Calendario</h5>

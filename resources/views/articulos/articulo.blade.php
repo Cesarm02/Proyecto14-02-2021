@@ -25,7 +25,8 @@
                             @if($articulo->imagen)
                                 <img src="{{ URL::to('/') }}/storage/{{ $articulo->imagen }}" style="width:320px !important; height:240px !important" class="card-img-top">
                                 {{-- <img src="{{$articulo->get_imagen}}" class="card-img-top"> --}}
-                        
+                                {{-- <img src="{{Storage::url("$articulo->imagen")}}" style="width:320px !important; height:240px !important" class="card-img-top"> --}}
+                                {{-- <img src="{{asset('/storage/'. $articulo->imagen)}}" alt="" style="width:320px !important; height:240px !important" class="card-img-top"> --}}
                             @endif
                         <p class="card-text"> 
                             {{$articulo->get_excerpt}} 

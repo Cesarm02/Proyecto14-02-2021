@@ -502,6 +502,45 @@ class PermisoSeeder extends Seeder
 
         $permiso_all[] = $permiso->id;
 
+        //PERMISO insulinas
+        $permiso = Permiso::create([
+            'nombre' => 'Listar sus insulinas',
+            'slug' => 'insulinas.index',
+            'descripcion' => 'Un usuario puede listar sus insulinas',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+
+        $permiso = Permiso::create([
+            'nombre' => 'Mostrar insulinas',
+            'slug' => 'insulinas.show',
+            'descripcion' => 'Un usuario puede ver insulinas',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Editar sus insulinas',
+            'slug' => 'insulinas.edit',
+            'descripcion' => 'Un usuario puede editar sus insulinas',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Crear sus insulinas',
+            'slug' => 'insulinas.create',
+            'descripcion' => 'Un usuario puede crear sus insulinas',
+        ]);
+
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Eliminar sus insulinas',
+            'slug' => 'insulinas.destroy',
+            'descripcion' => 'Un usuario puede sus eliminar insulinas',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+
     }
 
         
