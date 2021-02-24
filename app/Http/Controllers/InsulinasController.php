@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Modelos\Insulina;
 use Illuminate\Http\Request;
+use App\Modelos\ControlCambios;
 use Illuminate\Support\Facades\Auth;
 
 class InsulinasController extends Controller
@@ -30,6 +31,9 @@ class InsulinasController extends Controller
     public function create()
     {
         //
+        $this->authorize('haveaccess', 'insulinas.create');
+        return view('insulinas.create');
+
     }
 
     /**
@@ -41,6 +45,27 @@ class InsulinasController extends Controller
     public function store(Request $request)
     {
         //
+        $this->authorize('haveaccess', 'insulinas.store');
+
+        $request->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+            'estado'  => 'required',
+        ]);
+
+        $insulina = Insulina::create([
+            'informacion_user_id' => auth()->user()->id
+        ]+ $request->all());
+        
+        ControlCambios::create([
+            'fecha_hora' => date('Y/m/d H:i:s', time()),
+            'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla inslinas',
+            'id_usuario' => Auth()->user()->id
+        ]);
+
+        return redirect()->route('insulinas.index')
+        ->with('status_success', 'Insulina agregada correctamente');
+
     }
 
     /**
@@ -52,6 +77,10 @@ class InsulinasController extends Controller
     public function show($id)
     {
         //
+        $this->authorize('haveaccess', 'insulinas.show');
+        $insulina = Insulina::findOrFail($id);
+        return view('insulinas.show', compact('insulina'));
+
     }
 
     /**
@@ -63,6 +92,9 @@ class InsulinasController extends Controller
     public function edit($id)
     {
         //
+        $this->authorize('haveaccess', 'insulinas.edit');
+        $insulina = Insulina::findOrFail($id);
+        return view('insulinas.edit', compact('insulina'));
     }
 
     /**
@@ -75,6 +107,25 @@ class InsulinasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->authorize('haveaccess', 'insulinas.update');
+
+        $request->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+            'estado'  => 'required',
+        ]);
+
+        $insulina = Insulina::findOrFail($id);
+        $insulina->update($request->all());
+
+        ControlCambios::create([
+            'fecha_hora' => date('Y/m/d H:i:s', time()),
+            'descripcion' => 'Se edita registro ' . $insulina['id'] . ' en la tabla insulinas',
+            'id_usuario' => Auth()->user()->id
+        ]);
+
+        return redirect()->route('insulinas.index')
+        ->with('status_success', 'Insulina editada correctamente');
     }
 
     /**
@@ -86,5 +137,15 @@ class InsulinasController extends Controller
     public function destroy($id)
     {
         //
+        $this->authorize('haveaccess', 'insulinas.delete');
+        $insulina = Insulina::findOrFail($id);
+        ControlCambios::create([
+            'fecha_hora' => date('Y/m/d H:i:s', time()),
+            'descripcion' => 'Se elimina registro ' . $id . ' en la tabla insulinas',
+            'id_usuario' => Auth()->user()->id
+        ]);
+        $insulina->delete();
+        return redirect()->route('insulinas.index')
+        ->with('status_success', 'Insulina eliminada correctamente');
     }
 }

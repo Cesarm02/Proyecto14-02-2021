@@ -102,6 +102,6 @@ Route::resource('/antecedentes', 'AntescedentesController')->names('antecedentes
 Route::resource('/insulinas', 'InsulinasController')->names('insulinas');
 
 
-Route::get('storage-link', function(){
-    Artisan::call('storage:link');
-});
+// Route::get('storage-link', function(){
+//     Artisan::call('storage:link');
+// });

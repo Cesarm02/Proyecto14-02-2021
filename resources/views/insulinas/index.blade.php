@@ -21,5 +21,47 @@
         </h3>
     </div>
 @include('personalizar.mensaje')
+<div class="table-responsive">
+    <table id="medicamentos" style="text-align:center"  class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>tipo</th>
+                <th  ></th>
+                <th ></th>
+                <th ></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($insulinas as $insulina)
+            <tr>
+                <td> {{$insulina->id}}</td>
+                <td> {{$insulina->nombre}}</td>
+                <td> {{$insulina->fecha}}</td>
+                <td> {{$insulina->hora}}</td>
+                <td> {{$insulina->tipo}} </td>
+                <td > <a href="{{route('insulinas.show', $insulina->id)}}" class="btn btn-outline-info "> Ver </a></td>
 
+                <td > <a href="{{route('insulinas.edit', $insulina->id)}}" class="btn btn-outline-success " > Editar </a></td>
+                <td >
+                    <form action="{{route('insulinas.destroy', $insulina->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el {{$insulina->id}}?')">Eliminar</button>
+                        </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+</div>
 @endsection
+<script>
+    $(document).ready(function(){
+        $('#medicamentos').DataTable();
+    });
+</script>

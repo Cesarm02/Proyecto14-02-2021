@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Insulina extends Model
 {
     protected $fillable = [
-        'nombre', 'fecha', 'hora', 'cantidad', 'tipo', 'estado', 'comentarios', 'informacion_user_id'
+        'nombre', 'fecha', 'hora', 'cantidad', 'tipo', 'estado', 'comentarios', 'informacion_user_id', 'pico', 'inicio', 'duracion', 'concentracion'
     ];
 
     public function informacion_user()
