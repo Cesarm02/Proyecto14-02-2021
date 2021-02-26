@@ -123,7 +123,7 @@
                 </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
+                <small class="text-muted"><a href="{{route('historial.index')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
             <div class="card">
@@ -223,7 +223,7 @@
                 </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
+                <small class="text-muted"><a href="{{route('reportes.index')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
 

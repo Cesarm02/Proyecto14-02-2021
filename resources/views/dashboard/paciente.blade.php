@@ -12,7 +12,7 @@
                 </ul>
             </li>
         </div>
-        <div class="line"><a href="" class="fas fa-notes-medical"><font>Historial</font></a></div>
+        <div class="line"><a href="{{route('historial.index')}}" class="fas fa-notes-medical"><font>Historial</font></a></div>
         <div class="line"><a href="{{route('medicamentos.index')}}" class="fas fa-tablets"><font>Medicamentos</font></a></div>
         <div class="line"><a href="{{route('glucometrias.index')}}" class="fas fa-user-clock"><font>Glucometrías</font></a></div>
         <div class="line"><a href="{{route('alimentos.index')}}" class="fas fa-utensils"><font>Alimentos</font></a></div>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="line"><a href="{{route('diabetes')}}" class="far fa-newspaper"><font>Artículos</font></a></div>
-        <div class="line"><a href="" class="fas fa-file"><font>Reportes</font></a></div>
+        <div class="line"><a href="{{route('reportes.index')}}" class="fas fa-file"><font>Reportes</font></a></div>
         <div class="line"><a href="{{route('eventos.index')}}" class="fas fa-calendar-alt"><font>Calendario</font></a></div>
     </div>
 

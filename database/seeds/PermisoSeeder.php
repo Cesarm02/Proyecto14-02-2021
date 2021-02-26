@@ -541,6 +541,84 @@ class PermisoSeeder extends Seeder
 
         $permiso_all[] = $permiso->id;
 
+        //PERMISO historial
+        $permiso = Permiso::create([
+            'nombre' => 'Listar sus historial',
+            'slug' => 'historial.index',
+            'descripcion' => 'Un usuario puede listar sus historial',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+
+        $permiso = Permiso::create([
+            'nombre' => 'Mostrar historial',
+            'slug' => 'historial.show',
+            'descripcion' => 'Un usuario puede ver historial',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Editar sus historial',
+            'slug' => 'historial.edit',
+            'descripcion' => 'Un usuario puede editar sus historial',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Crear sus historial',
+            'slug' => 'historial.create',
+            'descripcion' => 'Un usuario puede crear sus historial',
+        ]);
+
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Eliminar sus historial',
+            'slug' => 'historial.destroy',
+            'descripcion' => 'Un usuario puede sus eliminar historial',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+
+        //PERMISO reportes
+        $permiso = Permiso::create([
+            'nombre' => 'Listar sus reportes',
+            'slug' => 'reportes.index',
+            'descripcion' => 'Un usuario puede listar sus reportes',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+
+        $permiso = Permiso::create([
+            'nombre' => 'Mostrar reportes',
+            'slug' => 'reportes.show',
+            'descripcion' => 'Un usuario puede ver reportes',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Editar sus reportes',
+            'slug' => 'reportes.edit',
+            'descripcion' => 'Un usuario puede editar sus reportes',
+        ]);
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Crear sus reportes',
+            'slug' => 'reportes.create',
+            'descripcion' => 'Un usuario puede crear sus reportes',
+        ]);
+
+
+        $permiso_all[] = $permiso->id;
+        $permiso = Permiso::create([
+            'nombre' => 'Eliminar sus reportes',
+            'slug' => 'reportes.destroy',
+            'descripcion' => 'Un usuario puede sus eliminar reportes',
+        ]);
+
+        $permiso_all[] = $permiso->id;   
+
     }
 
         

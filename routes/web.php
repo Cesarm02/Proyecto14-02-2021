@@ -100,6 +100,16 @@ Route::resource('/ejercicio', 'EjercicioController')->names('ejercicio');
 Route::resource('/antecedentes', 'AntescedentesController')->names('antecedentes');
 // RUta insulinas
 Route::resource('/insulinas', 'InsulinasController')->names('insulinas');
+//Ruta historial
+Route::resource('/historial', 'HistorialController')->names('historial');
+
+//Ruta de reportes
+Route::resource('/reportes', 'ReportesController')->names('reportes');
+
+Route::post('/graficas', 'ReportesController@peso');
+Route::get('/graficaPeso', 'ReportesController@graficaPeso')->name('grafica_peso');
+
+
 
 
 // Route::get('storage-link', function(){
