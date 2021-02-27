@@ -109,6 +109,11 @@ Route::resource('/reportes', 'ReportesController')->names('reportes');
 Route::post('/graficas', 'ReportesController@peso');
 Route::get('/graficaPeso', 'ReportesController@graficaPeso')->name('grafica_peso');
 
+Route::post('/grafica_ejercicio', 'ReportesController@ejercicio');
+Route::get('/graficaEjercicio', 'ReportesController@graficaEjercicio')->name('grafica_ejercicio');
+
+Route::post('/grafica_glucometria', 'ReportesController@glucometria');
+Route::get('/graficaGlucometria', 'ReportesController@graficaGlucometria')->name('grafica_glucometria');
 
 
 

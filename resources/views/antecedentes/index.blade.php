@@ -80,7 +80,7 @@
       <div class= "card-body">
           {{$familiar->descripcion}}
           <br>
-          <small> Fecha : {{$personal->fecha_diagnostico}}</small>
+          <small> Fecha : {{$familiar->fecha_diagnostico}}</small>
           <br>
           <form action="{{route('antecedentes.destroy', $familiar->id)}}" method="POST">
             <a class="btn btn-outline-success" href="{{route('antecedentes.edit',$familiar->id)}}"> Editar </a>

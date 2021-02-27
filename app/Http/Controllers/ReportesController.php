@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelos\PesoPaciente;
+use App\Modelos\ResumenCeg;
 use Illuminate\Support\Facades\Auth;
 
 class ReportesController extends Controller
@@ -29,6 +30,28 @@ class ReportesController extends Controller
     public function graficaPeso()
     {
         return view('reportes.peso');
+    }
+
+    public function ejercicio()
+    {
+        $ejercicios = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'ejercicio')->orderBy('id', 'DESC')->latest()->take(7)->get();
+        return response(json_encode($ejercicios), 200)->header('Content-type', 'text/plain');
+    }
+
+    public function graficaEjercicio()
+    {
+        return view('reportes.ejercicio');
+    }
+
+    public function glucometria()
+    {
+        $glucometrias = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'glucometria')->orderBy('id', 'DESC')->latest()->take(7)->get();
+        return response(json_encode($glucometrias), 200)->header('Content-type', 'text/plain');
+    }
+
+    public function graficaGlucometria()
+    {
+        return view('reportes.glucometria');
     }
 
     /**

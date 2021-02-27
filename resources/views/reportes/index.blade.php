@@ -30,25 +30,26 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                <h5 class="card-title"><i class="far fa-newspaper"></i> Artículos</h5>
+                <h5 class="card-title"><i class="fas fa-dumbbell"></i> Ejercicio</h5>
                 <p class="card-text">
-                Este icono hace referencia a la sección de Diabetes en general, se encuentra articulos como : ¿Qué es?, Tipos de diabetes, etc.  
+                Para generar la grafica de los ultimos 7 registros de ejercicio en su tiempo y fecha
                 </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="{{route('diabetes')}}" class="btn btn-primary">Visualizar</a></small>
+                <small class="text-muted"><a href="{{route('grafica_ejercicio')}}" class="btn btn-primary">Generar Grafica</a></small>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-book-reader"></i> Manuales</h5>
-                <p class="card-text">
-                Este icono hace referencia a la sección del manual de usuario, aquí se encuentra detalladamente el uso del aplicativo
-                </p>
+                    <h5 class="card-title"><i class="fas fa-user-clock"></i> Glucometrías</h5>
+                    <p class="card-text">
+                        Para generar la grafica de los ultimos 7 registros de glucosa con su valor y fecha
+                    </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
+                    <small class="text-muted"><a href="{{route('grafica_glucometria')}}" class="btn btn-primary">Generar Grafica</a></small>
                 </div>
+                
             </div>
             
         </div>
