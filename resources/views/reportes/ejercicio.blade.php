@@ -16,6 +16,7 @@
                 data:$("form").serialize()
             }).done(function(res){
                 var arreglo = JSON.parse(res);
+                console.log(res);
                 // console.log(arreglo.sort(((a, b) => a.id - b.id)));
                 arreglo.sort(((a, b) => a.id - b.id))
                 for(var x = 0; x <arreglo.length; x++){

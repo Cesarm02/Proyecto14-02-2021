@@ -63,7 +63,7 @@
                         
                         <div class="form-group">
                             <label >Estado *</label>
-                            <select name="estado" class="form-control">
+                            <select name="estado" class="form-control" required>
                                 <option value="activo" selected>Activo</option>
                                 <option value="inactivo" >Inactivo</option>
                             </select>

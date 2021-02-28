@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Modelos\ResumenCeg;
 use Illuminate\Http\Request;
 use App\Modelos\PesoPaciente;
-use App\Modelos\ResumenCeg;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 class ReportesController extends Controller
 {
@@ -61,7 +62,7 @@ class ReportesController extends Controller
      */
     public function create()
     {
-        //
+        return view('reportes.fechas');
     }
 
     /**
@@ -73,6 +74,42 @@ class ReportesController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'fecha_inicio' => 'required',
+            'fecha_final' => 'required',
+            'categoria'  => 'required',
+        ]);
+
+        if($request['fecha_inicio'] > $request['fecha_final']){
+            return redirect()->route('reportes.create')
+                ->with('falla', 'La fecha de inicio no puede ser menor a la fecha final');
+        }else{
+            if($request['categoria'] == 'peso'){
+                $pesos = PesoPaciente::where('informacion_user_id', (Auth::user()->id))->orderBY('id', 'DESC')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
+                // return response(json_encode($pesos), 200)->header('Content-type', 'text/plain');
+                $datos = json_encode($pesos);
+                // dd($datos);
+                // return view('reportes.graficaFecha', response(json_encode($pesos)));
+                return Response::view('reportes.graficaFecha', compact('datos'));
+
+            } else if ($request['categoria'] == 'ejercicio') {
+                $ejercicios = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'ejercicio')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
+                // return response(json_encode($ejercicios), 200)->header('Content-type', 'text/plain');
+                $datos = json_encode($ejercicios);
+                return Response::view('reportes.graficaFecha', compact('datos'));
+
+            } else if ($request['categoria'] == 'glucometria') {
+                $glucometrias = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'glucometria')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
+                // return response(json_encode($glucometrias), 200)->header('Content-type', 'text/plain');
+                $datos = json_encode($glucometrias);
+                return Response::view('reportes.graficaFecha', compact('datos'));
+            }
+        }
+    }
+
+    public function fecha()
+    {
+        return view('reportes.graficaFecha');
     }
 
     /**

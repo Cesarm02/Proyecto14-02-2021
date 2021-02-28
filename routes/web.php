@@ -116,7 +116,6 @@ Route::post('/grafica_glucometria', 'ReportesController@glucometria');
 Route::get('/graficaGlucometria', 'ReportesController@graficaGlucometria')->name('grafica_glucometria');
 
 
-
 // Route::get('storage-link', function(){
 //     Artisan::call('storage:link');
 // });
