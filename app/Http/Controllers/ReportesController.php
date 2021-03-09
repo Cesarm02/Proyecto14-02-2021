@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Barryvdh\DomPDF\Facade as PDF;
 use App\Modelos\ResumenCeg;
 use Illuminate\Http\Request;
 use App\Modelos\PesoPaciente;
@@ -33,11 +34,33 @@ class ReportesController extends Controller
         return view('reportes.peso');
     }
 
+    public function imprimirPeso()
+    {
+        $pesos = PesoPaciente::where('informacion_user_id', (Auth::user()->id))->orderBY('id', 'ASC')->latest()->take(5)->get();
+        $data = compact('pesos');
+        // dd($data);
+        $pdf = PDF::loadView('pdf.reportepeso', $data);
+        return $pdf->download('reporte_'.time().'.pdf');
+        // return $pdf->stream();
+    }
+
     public function ejercicio()
     {
         $ejercicios = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'ejercicio')->orderBy('id', 'DESC')->latest()->take(7)->get();
         return response(json_encode($ejercicios), 200)->header('Content-type', 'text/plain');
     }
+
+    public function imprimirEjercicio()
+    {
+        $ejercicios = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'ejercicio')->latest()->orderBy('id', 'DESC')->take(7)->get();
+
+        $data = compact('ejercicios');
+        // dd($data);
+        $pdf = PDF::loadView('pdf.reporteejercicio', $data);
+        return $pdf->download('reporte_' . time() . '.pdf');
+        // return $pdf->stream();
+    }
+
 
     public function graficaEjercicio()
     {
@@ -48,6 +71,17 @@ class ReportesController extends Controller
     {
         $glucometrias = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'glucometria')->orderBy('id', 'DESC')->latest()->take(7)->get();
         return response(json_encode($glucometrias), 200)->header('Content-type', 'text/plain');
+    }
+
+    public function imprimirGlucometria()
+    {
+        $glucometrias = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'glucometria')->orderBy('id', 'DESC')->latest()->take(7)->get();
+
+        $data = compact('glucometrias');
+        // dd($data);
+        $pdf = PDF::loadView('pdf.reporteglucometria', $data);
+        return $pdf->download('reporte_' . time() . '.pdf');
+        // return $pdf->stream();
     }
 
     public function graficaGlucometria()

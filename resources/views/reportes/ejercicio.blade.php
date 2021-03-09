@@ -95,7 +95,13 @@
     </nav>
     <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de graficas de <strong> Ejercicios</strong> 
+            <a href="/graficaEjercicio/imprimir" class="float-right btn btn-primary shadow-sm">
+                <i class="fas fa-print fa-sm text-white-50">
+                    Imprimir
+                </i>
+            </a>
         </h3>
+        
     </div>
 
 @include('personalizar.mensaje')

@@ -48,7 +48,7 @@
 
                         <div class="form-group">
                             <label >Valor glucosa </label>
-                            <input type="number" min="1" pattern="^[0-9]+" name="valor_glucometria" class="form-control" id="valor_glucometria"  value="{{old('valor_glucometria', $glucometria->valor_glucometria)}}" readonly> 
+                            <input type="number" min="1" pattern="^[0-9]+" name="valor_glucometria" class="form-control" id="valor_glucometria"  value="{{old('valor_glucometria', $glucometria->valor_glucometria)}} "  readonly> 
                         </div>
   
                         <div class="form-group">

@@ -115,7 +115,11 @@ Route::get('/graficaEjercicio', 'ReportesController@graficaEjercicio')->name('gr
 Route::post('/grafica_glucometria', 'ReportesController@glucometria');
 Route::get('/graficaGlucometria', 'ReportesController@graficaGlucometria')->name('grafica_glucometria');
 
+Route::get('/graficaPeso/imprimir', 'ReportesController@imprimirPeso');
+Route::get('/graficaEjercicio/imprimir', 'ReportesController@imprimirEjercicio');
+Route::get('/graficaGlucometria/imprimir', 'ReportesController@imprimirGlucometria');
 
+        
 // Route::get('storage-link', function(){
 //     Artisan::call('storage:link');
 // });

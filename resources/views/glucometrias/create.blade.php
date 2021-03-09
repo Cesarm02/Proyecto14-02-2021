@@ -58,7 +58,7 @@
 
                         <div class="form-group">
                             <label >Valor glucosa *</label>
-                            <input type="number" min="1" pattern="^[0-9]+" name="valor_glucometria" class="form-control" id="valor_glucometria" > 
+                            <input type="number" min="1" pattern="^[0-9]+" name="valor_glucometria" class="form-control" id="valor_glucometria" placeholder="mg/dl" > 
                         </div>
   
                         <div class="form-group">

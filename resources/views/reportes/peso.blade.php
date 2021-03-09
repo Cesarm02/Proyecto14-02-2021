@@ -105,8 +105,14 @@
             <li class="breadcrumb-item active" aria-current="page">Peso</li>
         </ol>
     </nav>
+
     <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de graficas de <strong> Peso y Altura</strong> 
+            <a href="/graficaPeso/imprimir" class="float-right btn btn-primary shadow-sm">
+                <i class="fas fa-print fa-sm text-white-50">
+                    Imprimir
+                </i>
+            </a>
         </h3>
     </div>
 
