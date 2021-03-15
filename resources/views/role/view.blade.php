@@ -2,11 +2,18 @@
 
 @section('content')
 <div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{route('inicio')}}">Home</a></li>
+            <li class="breadcrumb-item active"><a href="{{route('role.index')}}">Roles</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{$role->nombre}}</li>
+        </ol>
+    </nav>
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2>Editar rol</h2>    
+                    <h2>Revisando rol = {{$role->nombre}}</h2>    
                 </div>
 
                 <div class="card-body">

@@ -2,6 +2,18 @@
 
 @section('content')
 <div class="container">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{route('inicio')}}">Home</a></li>
+        <li class="breadcrumb-item active"><a href="{{route('role.index')}}">Roles</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Crear rol</li>
+
+    </ol>
+    </nav>
+    <div class="alert alert-info class=card-header" role="alert">
+        <h3> Sección de <strong> Creación de rol </strong> 
+        </h3>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -14,7 +26,7 @@
                     <form action="{{route('role.store')}}" method="POST">
                         @csrf
                         <div class="container">
-                            <h3>Data requerido</h3>
+                            <h3>Datos requerido</h3>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" placeholder="Nombre" name="nombre" value="{{old('nombre')}}">
                             </div>

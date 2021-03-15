@@ -2,8 +2,18 @@
 
 @section('content')
 <div class="container">
+        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{route('inicio')}}">Home</a></li>
+        <li class="breadcrumb-item active">Roles</a></li>
+    </ol>
+    </nav>
+    <div class="alert alert-info class=card-header" role="alert">
+        <h3> Sección de <strong> Roles </strong> 
+        </h3>
+    </div>
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h2>
@@ -18,7 +28,7 @@
                         <br>
                     @endcan
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" style="text-align: center">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
@@ -26,7 +36,7 @@
                                 <th scope="col">Slug</th>
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Full acceso</th>
-                                <th colspan="3"></th>
+                                <th colspan="3"> Acciones</th>
                                 </tr>
                             </thead>
                                 <tbody>
@@ -51,7 +61,8 @@
                                                 <form action="{{route('role.destroy', $role->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-outline-danger"> Eliminar </button>
+                                                    <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el rol {{$role->nombre}}?')"> Eliminar </button>
+                                                    
                                                 </form>
                                                 @endcan
                                             </td>

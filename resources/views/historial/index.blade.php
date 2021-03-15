@@ -1,8 +1,7 @@
 @extends('layouts.app')
    <head>
-    <link rel="stylesheet" href="css/collapse.css"> 
-    
- </head>
+    <link rel="stylesheet" href="css/collapse.css">     
+  </head>
 
 @section('content')
 <div class="container">

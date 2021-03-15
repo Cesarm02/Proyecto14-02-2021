@@ -2,11 +2,19 @@
 
 @section('content')
 <div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{route('inicio')}}">Home</a></li>
+            <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Usuarios</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{$user->name}}</li>
+        </ol>
+    </nav>
+
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2>Editar Usuario</h2>    
+                    <h2>Revisando Usuario =  {{$user->name}}</h2>    
                 </div>
 
                 <div class="card-body">

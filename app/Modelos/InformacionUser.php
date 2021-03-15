@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class InformacionUser extends Model
 {
     protected $fillable = [
-        'nombre', 'apellidos', 'tipo_documento', 'dni', 'celular', 'profesion', 'email', 
+        'apellidos', 'tipo_documento', 'dni', 'celular',
+         'profesion', 'fecha_nacimiento', 'edad', 'sexo',
+         'grupo_sanguineo', 'rh', 'direccion', 'ciudad', 'foto'
         
     ];
 

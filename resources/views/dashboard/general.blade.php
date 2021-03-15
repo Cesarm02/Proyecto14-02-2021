@@ -239,6 +239,72 @@
                 </div>
             </div>
         </div>
+    @elseif(Auth()->user()->roles[0]->id == 1)
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-user"></i> Usuarios</h5>
+                <p class="card-text">
+                    Este icono hace referencia a la lista de usuarios registrados en el sistema
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('user.index')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-address-card"></i> Roles</h5>
+                <p class="card-text">
+                Este icono hace referencia a la sección de los roles que existen en el sistema con sus permisos
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('role.index')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+  
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-database"></i> Back up</h5>
+                <p class="card-text">
+                Este icono hace referencia a la generación y recuperación de la base de datos
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('reportes.index')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-comments"></i> Foro</h5>
+                <p class="card-text">
+                Este icono hace referencia a la sección foro, donde los usuarios logeados publican sus articulos en diferentes categorias
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('articulo')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+                      
+        </div>
+
+        <div class="card-deck">
+
+
+          <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="far fa-newspaper"></i> Artículos</h5>
+                <p class="card-text">
+                Este icono hace referencia a la sección de Diabetes en general, se encuentra articulos como : ¿Qué es?, Tipos de diabetes, etc.  
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('diabetes')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+        </div>
     @endif
 
 </div>

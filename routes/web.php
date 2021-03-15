@@ -119,6 +119,8 @@ Route::get('/graficaPeso/imprimir', 'ReportesController@imprimirPeso');
 Route::get('/graficaEjercicio/imprimir', 'ReportesController@imprimirEjercicio');
 Route::get('/graficaGlucometria/imprimir', 'ReportesController@imprimirGlucometria');
 
+
+Route::resource('/perfil', 'PerfilController')->names('perfil');
         
 // Route::get('storage-link', function(){
 //     Artisan::call('storage:link');

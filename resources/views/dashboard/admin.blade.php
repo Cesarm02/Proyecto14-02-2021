@@ -15,8 +15,8 @@
         @endcan
 
         <div class="line"><a href="" class="fas fa-database"><font>Back up</font></a></div>
- 
-                <div class="line">
+        
+        <div class="line">
             <li>
                 <a href="#" class=" submenu-toggle fas fa-comments"><font>Foro</font></a>
                 <ul class="nav submenu">
@@ -29,6 +29,8 @@
                 </ul>
             </li>
         </div>
+        <div class="line"><a href="{{route('diabetes')}}" class="far fa-newspaper"><font>Artículos</font></a></div>
+
 
     </div>
 
