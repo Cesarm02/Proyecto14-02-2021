@@ -63,23 +63,23 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto ">
                         
                         {{-- <li class="nav-item"><a href="{{route('articulo')}}" class="nav-link"> Articulos </a> </li> --}}
                         {{-- <li class="nav-item"><a href="{{route('articulo')}}" class="nav-link"> Articulos </a> </li> --}}
 
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            <li class="nav-item justify-content-end " style="padding: 0px 0px 0px 25px">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item" style="padding: 0px 0px 0px 25px">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown" style="padding: 0px 0px 0px 25px">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>

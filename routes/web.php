@@ -121,7 +121,7 @@ Route::get('/graficaGlucometria/imprimir', 'ReportesController@imprimirGlucometr
 
 
 Route::resource('/perfil', 'PerfilController')->names('perfil');
-        
+Route::resource('/user/resumen', 'ResumenMedicoController')->names('resumen');
 // Route::get('storage-link', function(){
 //     Artisan::call('storage:link');
 // });

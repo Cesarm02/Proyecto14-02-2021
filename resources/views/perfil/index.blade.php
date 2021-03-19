@@ -35,7 +35,7 @@
 
                         <div class="form-group col-md-6">
                             <label >Nombres</label>
-                            <input type="text" name="name" class="form-control" value="{{Auth::user()->name}}" >
+                            <input type="text" name="name" class="form-control" value="{{$perfil[0]->name}}" >
                         </div>
                         <div class="form-group col-md-6">
                             <label >Apellidos </label>

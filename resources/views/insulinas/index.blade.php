@@ -22,7 +22,7 @@
     </div>
 @include('personalizar.mensaje')
 <div class="table-responsive">
-    <table id="medicamentos" style="text-align:center"  class="table table-striped table-bordered">
+    <table id="insulinas" style="text-align:center"  class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -61,7 +61,11 @@
 </div>
 @endsection
 <script>
-    $(document).ready(function(){
-        $('#medicamentos').DataTable();
+    $(document).ready(function() {
+        $('#insulinas').DataTable({
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            }
+        });
     });
 </script>

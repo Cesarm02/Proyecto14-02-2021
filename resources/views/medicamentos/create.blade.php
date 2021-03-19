@@ -51,7 +51,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label >Especialidad</label>
+                            <label >Especialidad (Doctor que asigna el medicamento)</label>
                             <input type="text" name="especialidad" class="form-control" id="especialidad" > 
                         </div>
                         <div class="form-inline">

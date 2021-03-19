@@ -32,6 +32,7 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Rol(es)</th>
                                 <th colspan="3" >Acciones</th>
+                                <th> Información</th>
                                 </tr>
                             </thead>
                                 <tbody>
@@ -61,6 +62,14 @@
                                                     <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el usuario {{$user->name}}?')"> Eliminar </button>
                                                 </form>
                                                 @endcan
+                                            </td>
+                                            <td>
+                                                <form action="{{route('resumen.update', $user->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+
+                                                    <button class="btn btn-outline-dark " >Visualizar</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

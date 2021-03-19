@@ -76,6 +76,8 @@
                 },
 
                 options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
                             ticks: {
@@ -120,8 +122,8 @@
 
     <section class="container">
         <div class="form-row">
-            <div class="form-group col-md-6 " style="width: 100px  height:100px;
-     margin: 0px auto;" >
+            <div class="form-group col-md-6 " style="width: 100%  height:80vh;
+                margin: 0px auto;" >
                 <canvas id="peso" width="500" height="500" ></canvas>
     
                 <form action="/graficaPeso" method="POST" id="form">

@@ -14,6 +14,15 @@
         <h3> Sección de <strong> Artículos </strong></h3>
     </div>
     <div class="row justify-content-center">
+
+        <div class="col-md-8" style="padding-bottom: 10px">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/hzzkfNqZk6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <br>
+
         <div class="col-md-8">
             <div class="card-header">
                     <h2>
@@ -24,7 +33,7 @@
                     </h2>
                     @include('personalizar.mensaje')
                     
-                </div>
+            </div>
 
             @foreach($posts as $post)
                 <div class="card mb-4">

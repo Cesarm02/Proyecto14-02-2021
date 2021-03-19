@@ -56,7 +56,7 @@
 
 @include('personalizar.mensaje')
 <div class="table-responsive">
-    <table  style="text-align:center"  class="table table-striped table-bordered ">
+    <table  style="text-align:center"  class="table table-responsive table-striped table-bordered ">
         <thead>
             <th> Fecha</th>
             <th> Peso</th>

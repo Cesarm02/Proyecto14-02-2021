@@ -6,6 +6,7 @@ use App\User;
 use App\Modelos\Role;
 use Illuminate\Http\Request;
 use App\Modelos\ControlCambios;
+use App\Modelos\InformacionUser;
 
 class UserController extends Controller
 {
@@ -37,10 +38,11 @@ class UserController extends Controller
         $this->authorize('view', [$user, ['user.show', 'userown.show'] ]);
 
         $roles = Role::orderBy('nombre')->get();
+        $informacion = InformacionUser::findOrFail($user->id);
+        // dd($informacion);
 
         // return $roles;
-
-        return view('user.view', compact('roles', 'user'));
+        return view('user.view', compact('roles', 'user', 'informacion'));
     }
 
     /**

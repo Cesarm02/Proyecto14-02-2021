@@ -8,7 +8,9 @@
    <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('inicio')}}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Historial</li>
+            <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Usuarios</a></li>
+            <li class="breadcrumb-item active" >{{$user->name}}</li>
+            <li class="breadcrumb-item active" aria-current="page">resumen</li>
         </ol>
     </nav>
     <div class="alert alert-info class=card-header" role="alert">
@@ -34,7 +36,7 @@
     
       <div id="collapsepeso" class="panel-collapse collapse" aria-labelledby="peso" data-parent="#accordionExample">
         <div class= "card-body">
-          <table  style="text-align:center;"  class="table  table-striped table-bordered table-responsive">
+          <table  style="text-align:center"  class="table table-striped table-bordered ">
         <thead>
             <th> Fecha</th>
             <th> Peso</th>
@@ -97,7 +99,7 @@
                 <td> {{$medicamento->cantidad}}</td>
                 <td> {{$medicamento->administracion}}</td>
                 <td> {{$medicamento->horario}} horas</td>
-                <td> {{$medicamento->estado}}</td>
+                <td> {{$medicamento->estado}} </td>
 
             </tr>
             @endforeach
