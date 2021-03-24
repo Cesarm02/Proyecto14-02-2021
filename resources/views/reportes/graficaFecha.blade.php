@@ -235,8 +235,10 @@
 
         </ol>
     </nav>
+
     <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de <strong> Reportes </strong> 
+            
         </h3>
     </div>
 

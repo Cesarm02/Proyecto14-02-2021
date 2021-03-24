@@ -17,7 +17,7 @@
         <div class="card-deck">
             <div class="card">
                 <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-icons"> Home</i></h5>
+                <h5 class="card-title"><i class="fas fa-icons"> </i>Home</h5>
                 <p class="card-text">
                 Este icono hace referencia a la sección de guia  
                 </p>
@@ -95,7 +95,7 @@
         <div class="card-deck">
             <div class="card">
                 <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-icons"> Home</i></h5>
+                <h5 class="card-title"><i class="fas fa-icons"> </i>Home</h5>
                 <p class="card-text">
                 Este icono hace referencia a la sección de guia  
                 </p>

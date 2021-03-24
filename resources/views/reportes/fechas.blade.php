@@ -52,17 +52,22 @@
                                 <option value="glucometria" >Glucometría</option>
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label> Opción</label>
+                            <select name="opcion" class="form-control" required> 
+                                <option value="imprimir" selected>Pdf</option>
+                                <option value="generar" >Grafica</option>
+                            </select>
+                        </div>
  
                         <div class="form-group">
                             @csrf
                             <input type="submit" value="Generar" class="btn btn-primary ">
                         </div>
+                        
                     </form>
                 </div>
-        
-
-
-
             </div>
         </div>
     </div>

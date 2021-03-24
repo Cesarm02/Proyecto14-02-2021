@@ -131,12 +131,7 @@
                     <input type="hidden" name="id" value ="1">
                 </form>
             </div>
-    
-
-
         </div>
-
-
     </section>
 
 
