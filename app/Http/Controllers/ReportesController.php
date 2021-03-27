@@ -147,26 +147,29 @@ class ReportesController extends Controller
         }else{
             if ($request['categoria'] == 'peso') {
                 $pesos = PesoPaciente::where('informacion_user_id', (Auth::user()->id))->orderBY('id', 'DESC')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
-                $data = compact('pesos');
+                $fechaI = $request['fecha_inicio'];
+                $fechaF = $request['fecha_final'];
+                $data = compact('pesos', 'fechaI', 'fechaF');
                 $pdf = PDF::loadView('pdf.reportepeso', $data);
                 return $pdf->download('reporte_' . time() . '.pdf');
 
             } else if ($request['categoria'] == 'ejercicio') {
                 $ejercicios = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'ejercicio')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
-                $data = compact('ejercicios');
+                $fechaI = $request['fecha_inicio'];
+                $fechaF = $request['fecha_final'];
+                $data = compact('ejercicios', 'fechaI', 'fechaF');
+                
                 $pdf = PDF::loadView('pdf.reporteejercicio', $data);
                 return $pdf->download('reporte_' . time() . '.pdf');
             } else if ($request['categoria'] == 'glucometria') {
                 $glucometrias = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'glucometria')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
-                $data = compact('glucometrias');
+                $fechaI = $request['fecha_inicio'];
+                $fechaF = $request['fecha_final'];
+                $data = compact('glucometrias', 'fechaI', 'fechaF');
                 $pdf = PDF::loadView('pdf.reporteglucometria', $data);
                 return $pdf->download('reporte_' . time() . '.pdf');
-
             }
-
         }
-
-
     }
 
     public function fecha()

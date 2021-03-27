@@ -17,7 +17,7 @@
         <div class="line"><a href="{{route('glucometrias.index')}}" class="fas fa-user-clock"><font>Glucometrías</font></a></div>
         <div class="line"><a href="{{route('alimentos.index')}}" class="fas fa-utensils"><font>Alimentos</font></a></div>
         <div class="line"><a href="{{route('ejercicio.index')}}" class="fas fa-dumbbell"><font>Ejercicio</font></a></div>
-        <div class="line"><a href="{{route('insulinas.index')}}"  class="fas fa-syringe"><font>Insulinas</font></a></div>
+        {{-- <div class="line"><a href="{{route('insulinas.index')}}"  class="fas fa-syringe"><font>Insulinas</font></a></div> --}}
 
         <div class="line">
             <li>

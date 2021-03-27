@@ -21,7 +21,7 @@ class UserController extends Controller
         // dd(Auth()->user()->roles[0]->id);
         $this->authorize('haveaccess', "user.index");
 
-        $users = User::with('roles')->orderBy('id', 'Desc')->paginate(8);
+        $users = User::with('roles')->orderBy('id', 'Desc')->get();
         // return $users;
         return view('user.index', compact('users'));
     }

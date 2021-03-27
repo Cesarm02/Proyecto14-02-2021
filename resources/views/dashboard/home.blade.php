@@ -19,17 +19,7 @@
             </li>
         </div>
         <div class="line"><a href="" class="fas fa-user"><font>Soporte</font></a></div>
-        
-                <div class="line">
-                    <li>
-                        <a href="#" class=" submenu-toggle fas fa-id-card"><font>Politicas</font></a>
-                        <ul class="nav submenu">
-                            <li><small> <a  href="{{route('politica')}}">Tratamiento de datos </a> </small> </li>
-                            <li><small> <a  href=""> Politicas cookies </a> </small> </li>
-                            <li><small> <a  href=""> Terminos y condiciones </a> </small> </li>
-                        </ul>
-                    </li>
-                </div>
+        <div class="line"><a href="{{route('politica')}}" class="fas fa-book-reader"><font>Politicas</font></a></div>
 
     </div>
 

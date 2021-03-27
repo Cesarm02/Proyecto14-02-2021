@@ -103,7 +103,7 @@
                                     id="sliderPeso"
                                     class="weight-slider"
                                     type="range"
-                                    min="25"
+                                    min="15"
                                     max="180"
                                     value="60"
                                 />
@@ -114,7 +114,7 @@
                                     name="peso"
                                     type="number"
                                     value="60"
-                                    min="25"
+                                    min="15"
                                     max="180"
                                     oninput="showValueWeight(this.value)"
                                     readonly
@@ -128,7 +128,7 @@
                                     class="height-slider"
                                     type="range"
                                     min="25"
-                                    max="200"
+                                    max="220"
                                     value="60"
                                 />
                                 <p>Altura:
@@ -139,7 +139,7 @@
                                         type="number"
                                         value="60"
                                         min="25"
-                                        max="180"
+                                        max="220"
                                         name="altura"
                                         readonly
                                     />

@@ -36,7 +36,7 @@
     
       <div id="collapsepeso" class="panel-collapse collapse" aria-labelledby="peso" data-parent="#accordionExample">
         <div class= "card-body">
-          <table  style="text-align:center"  class="table table-striped table-bordered ">
+          <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
         <thead>
             <th> Fecha</th>
             <th> Peso</th>
@@ -79,7 +79,7 @@
     
       <div id="collapsemedicamentos" class="panel-collapse collapse" aria-labelledby="medicamentos" data-parent="#accordionExample">
         <div class= "card-body">
-          <table  style="text-align:center"  class="table table-striped table-bordered ">
+          <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
         <thead>
             <tr>
                 <th>Id</th>
@@ -128,7 +128,7 @@
     
       <div id="collapseglucometrias" class="panel-collapse collapse" aria-labelledby="glucometrias" data-parent="#accordionExample">
         <div class= "card-body">
-          <table  style="text-align:center"  class="table table-striped table-bordered ">
+          <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
         <thead>
             <tr>
                 <th>Fecha</th>
@@ -167,7 +167,7 @@
   </div>
 </div>
 
-<div class="accordion" id="accordionExample" style="margin-bottom: 10px; padding: 10px;">
+{{-- <div class="accordion" id="accordionExample" style="margin-bottom: 10px; padding: 10px;">
   <div class="card" style="border-radius: 10px;">
     <div class="card-header" id="heading" style="background-color: #DCDCDC;">
       <h4 class="mb-0">
@@ -184,7 +184,7 @@
     
       <div id="collapseinsulinas" class="panel-collapse collapse" aria-labelledby="insulinas" data-parent="#accordionExample">
         <div class= "card-body">
-          <table  style="text-align:center"  class="table table-striped table-bordered ">
+          <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
         <thead>
             <tr>
                 <th>Id</th>
@@ -220,7 +220,7 @@
         </div>
       </div>
   </div>
-</div>
+</div> --}}
 
 <div class="accordion" id="accordionExample" style="margin-bottom: 10px; padding: 10px;">
   <div class="card" style="border-radius: 10px;">
@@ -240,7 +240,7 @@
     
       <div id="collapsepersonales" class="panel-collapse collapse" aria-labelledby="personales" data-parent="#accordionExample">
         <div class= "card-body">
-            <table  style="text-align:center"  class="table table-striped table-bordered ">
+            <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -275,7 +275,7 @@
     
       <div id="collapsefamiliares" class="panel-collapse collapse" aria-labelledby="familiares" data-parent="#accordionExample">
         <div class= "card-body">
-            <table  style="text-align:center"  class="table table-striped table-bordered ">
+            <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -310,7 +310,7 @@
     
       <div id="collapsealergias" class="panel-collapse collapse" aria-labelledby="alergias" data-parent="#accordionExample">
         <div class= "card-body">
-            <table  style="text-align:center"  class="table table-striped table-bordered ">
+            <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -345,7 +345,7 @@
     
       <div id="collapsetratamientos" class="panel-collapse collapse" aria-labelledby="tratamientos" data-parent="#accordionExample">
         <div class= "card-body">
-            <table  style="text-align:center"  class="table table-striped table-bordered ">
+            <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -361,11 +361,9 @@
                         <td> {{$tratamiento->nombre}}</td>
                         <td> {{$tratamiento->fecha_diagnostico}}</td>
                         <td> {{$tratamiento->descripcion}}</td>
-
                     </tr>
                     @endforeach
                 </tbody>
-        
             </table>
         </div>
       </div>
@@ -380,7 +378,7 @@
     
       <div id="collapseintervenciones" class="panel-collapse collapse" aria-labelledby="intervenciones" data-parent="#accordionExample">
         <div class= "card-body">
-            <table  style="text-align:center"  class="table table-striped table-bordered ">
+            <table  style="text-align:center"  class="table table-striped table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -396,15 +394,12 @@
                         <td> {{$intervencione->nombre}}</td>
                         <td> {{$intervencione->fecha_diagnostico}}</td>
                         <td> {{$intervencione->descripcion}}</td>
-
                     </tr>
                     @endforeach
                 </tbody>
-        
             </table>
         </div>
       </div>
-
   </div>
 </div>
 

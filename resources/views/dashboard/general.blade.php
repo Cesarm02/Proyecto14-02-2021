@@ -175,7 +175,7 @@
                 <small class="text-muted"><a href="{{route('ejercicio.index')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
                 </div>
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-syringe"></i> Insulinas</h5>
                 <p class="card-text">
@@ -185,7 +185,7 @@
                 <div class="card-footer">
                 <small class="text-muted"><a href="{{route('insulinas.index')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
-            </div>
+            </div> --}}
             
         </div>
 

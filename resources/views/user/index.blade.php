@@ -1,4 +1,10 @@
 @extends('layouts.app')
+   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
 
 @section('content')
 <div class="container">
@@ -22,23 +28,28 @@
                 </div>
                 <div class="card-body">
                     @include('personalizar.mensaje')
-                    <div class="table-responsive">
 
-                        <table class="table table-hover" style="text-align: center">
+
+
+                    <div class="table-responsive" >
+
+                        <table id="usuarios" class="table table-hover" style="text-align: center">
                             <thead>
                                 <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Rol(es)</th>
-                                <th colspan="3" >Acciones</th>
-                                <th> Información</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Rol(es)</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th> Información</th>
                                 </tr>
                             </thead>
                                 <tbody>
                                     @foreach($users as $user)
                                          <tr>
-                                            <th scope="row">{{$user->id}}</th>
+                                            <td scope="row">{{$user->id}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
                                             <td>
@@ -76,10 +87,19 @@
                                 </tbody>
                         </table>
                     </div>
-                        {{$users->links()}}
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+<script>
+    $(document).ready(function() {
+        $('#usuarios').DataTable({
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            }
+        });
+    });
+</script>

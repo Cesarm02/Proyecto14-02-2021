@@ -4,38 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        .titulo{
-            text-align: center;
-            font-size: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 </head>
 <body>
-    <div class="titulo">
-        <h2>Registro de ultimos 7 registros de glucometrías</h2>
-    </div>
-    <table style="border-collapse:collapse; border: 1px solid #ccc; width:100%">
-        <thead>
-            <tr>
-                <th style="padding: 10px; background: #000; color: #fff; text-transform: uppercase;"> Id </th>
-                <th style="padding: 10px; background: #000; color: #fff; text-transform: uppercase;"> Fecha </th>
-                <th style="padding: 10px; background: #000; color: #fff; text-transform: uppercase;"> Hora  </th>
-                <th style="padding: 10px; background: #000; color: #fff; text-transform: uppercase;"> Comida</th>
-                <th style="padding: 10px; background: #000; color: #fff; text-transform: uppercase;"> Valor glucosa</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="container">
+
+        <div style=" text-align: center;">
+            <h2>Registro de glucometrías</h2>
+            <small >Fecha desde {{$fechaI}} --- Hasta {{$fechaF}}</small>
+        </div>
+        <hr>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th > Id </th>
+                    <th > Fecha </th>
+                    <th > Hora  </th>
+                    <th > Comida</th>
+                    <th > Valor glucosa</th>
+                </tr>
+            </thead>
+            <tbody>
             @foreach($glucometrias as $glucometria)
                 <tr>
-                    <td style="padding: 10px; text-align: center; border-bottom: 2px solid #111; color: #333; font-size: 18px;"> {{$glucometria->id}}</td>
-                    <td style="padding: 10px; text-align: center; border-bottom: 2px solid #111; color: #333; font-size: 18px;"> {{$glucometria->fecha}}</td>
-                    <td style="padding: 10px; text-align: center; border-bottom: 2px solid #111; color: #333; font-size: 18px;"> {{$glucometria->hora}}</td>
-                    <td style="padding: 10px; text-align: center; border-bottom: 2px solid #111; color: #333; font-size: 18px;"> {{$glucometria->tipo_hora}}  {{$glucometria->tipo}}</td>
-                    <td style="padding: 10px; text-align: center; border-bottom: 2px solid #111; color: #333;  font-size: 18px;"> {{$glucometria->valor_glucometria}} mg/dl</td>
+                    <td > {{$glucometria->id}}</td>
+                    <td > {{$glucometria->fecha}}</td>
+                    <td > {{$glucometria->hora}}</td>
+                    <td > {{$glucometria->tipo_hora}}  {{$glucometria->tipo}}</td>
+                    <td > {{$glucometria->valor_glucometria}} mg/dl</td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    	<script type="text/php">
+        if ( isset($pdf) ) {
+            $pdf->page_script('
+                $font = $fontMetrics->get_font("Arial, Helvetica, sans-serif", "normal");
+                $pdf->text(270, 780, "Pág $PAGE_NUM de $PAGE_COUNT", $font, 10);
+            ');
+        }
+	</script>
 </body>
 </html>
