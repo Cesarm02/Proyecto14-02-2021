@@ -5,26 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    {{-- <style>
-        header{
-            position: fixed;
-            top : 0cm;
-            left : 0cm;
-            right: 0cm;
-            height: 2cm;
-            background-color: #46C66B;
-            color: white;
-            text-align: center;
-            line-height: 30px;
-        }
-    </style> --}}
+
 </head>
 <body>
 
     <div class="container">
 
         <div style=" text-align: center;">
+            <img src="{{ public_path('storage/logo/Logo_1.png')}}" alt="Logo">
+
             <h2 >Registro de datos de peso</h2>
+            <h5>Nombres: {{$nombre}}  Apellidos: {{$apellido}}, Documento: {{$documento}}</h5>
             <small >Fecha desde {{$fechaI}} --- Hasta {{$fechaF}}</small>
         </div>
         <hr>

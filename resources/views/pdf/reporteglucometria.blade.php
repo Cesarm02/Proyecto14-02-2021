@@ -11,7 +11,10 @@
 <div class="container">
 
         <div style=" text-align: center;">
+            <img src="{{ public_path('storage/logo/Logo_1.png')}}" alt="Logo">
+
             <h2>Registro de glucometrías</h2>
+            <h5>Nombres: {{$nombre}}  Apellidos: {{$apellido}}, Documento: {{$documento}}</h5>
             <small >Fecha desde {{$fechaI}} --- Hasta {{$fechaF}}</small>
         </div>
         <hr>

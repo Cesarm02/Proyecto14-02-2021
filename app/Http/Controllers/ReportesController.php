@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Barryvdh\DomPDF\Facade as PDF;
 use App\Modelos\ResumenCeg;
 use Illuminate\Http\Request;
 use App\Modelos\PesoPaciente;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 
 class ReportesController extends Controller
@@ -115,8 +116,15 @@ class ReportesController extends Controller
             'categoria'  => 'required',
             'opcion' => 'required'
         ]);
-
-            // dd($request->all());
+            $nombre = Auth::user()->name;
+            $apellido = Auth::user()->informacion_user[0]->apellidos;
+            $documento = Auth::user()->informacion_user[0]->dni;
+           
+            // dd($documento);
+        // dd($request->all());
+        // $ruta = Storage::disk('local')->get('public/logo/Logo_1.png');
+        // dd($ruta);
+            // dd(asset('storage/logo/Logo_1.png'));
 
         if($request['opcion'] == "generar"){
             if($request['fecha_inicio'] > $request['fecha_final']){
@@ -149,7 +157,7 @@ class ReportesController extends Controller
                 $pesos = PesoPaciente::where('informacion_user_id', (Auth::user()->id))->orderBY('id', 'DESC')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
                 $fechaI = $request['fecha_inicio'];
                 $fechaF = $request['fecha_final'];
-                $data = compact('pesos', 'fechaI', 'fechaF');
+                $data = compact('pesos', 'fechaI', 'fechaF','nombre', 'apellido','documento');
                 $pdf = PDF::loadView('pdf.reportepeso', $data);
                 return $pdf->download('reporte_' . time() . '.pdf');
 
@@ -157,7 +165,7 @@ class ReportesController extends Controller
                 $ejercicios = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'ejercicio')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
                 $fechaI = $request['fecha_inicio'];
                 $fechaF = $request['fecha_final'];
-                $data = compact('ejercicios', 'fechaI', 'fechaF');
+                $data = compact('ejercicios', 'fechaI','fechaF', 'nombre', 'apellido', 'documento');
                 
                 $pdf = PDF::loadView('pdf.reporteejercicio', $data);
                 return $pdf->download('reporte_' . time() . '.pdf');
@@ -165,7 +173,7 @@ class ReportesController extends Controller
                 $glucometrias = ResumenCeg::where('informacion_user_id', (Auth::user()->id))->where('categoria', 'glucometria')->whereBetween('fecha', [$request['fecha_inicio'], $request['fecha_final']])->get();
                 $fechaI = $request['fecha_inicio'];
                 $fechaF = $request['fecha_final'];
-                $data = compact('glucometrias', 'fechaI', 'fechaF');
+                $data = compact('glucometrias', 'fechaI','fechaF', 'nombre', 'apellido', 'documento');
                 $pdf = PDF::loadView('pdf.reporteglucometria', $data);
                 return $pdf->download('reporte_' . time() . '.pdf');
             }

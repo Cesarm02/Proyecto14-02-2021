@@ -12,11 +12,9 @@
 <div class="container">
 
         <div style=" text-align: center;">
-            {{-- <img src="{{ URL::to('/') }}/storage/logo/Logo_1.png" style="width:320px !important; height:240px !important" class="card-img-top"> --}}
-            {{-- <img src="C:\xampp\htdocs\laravel\curso\Proyecto local\Roles_Permisos\storage\app\public\logo\Logo_1.png"> --}}
-            {{-- <img src="/public/storage/logo/Logo_1.png" > --}}
-
+            <img src="{{ public_path('storage/logo/Logo_1.png')}}" alt="Logo">
             <h2>Registro de Ejercicios</h2>
+            <h5>Nombres: {{$nombre}}  Apellidos: {{$apellido}}, Documento: {{$documento}}</h5>
             <small >Fecha desde {{$fechaI}} --- Hasta {{$fechaF}}</small>
 
         </div>
