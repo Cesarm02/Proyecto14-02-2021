@@ -22,6 +22,12 @@
                 El presente aviso de privacidad establece los términos y condiciones del sistema con el respectivo cumplimiento de la <strong> Ley 1581 de 2012 </strong>, realizará el tratamiento de sus datos personales.
             </p>
             <p>
+                <strong> 
+                    Al momento de usar el sistema de información se entiende que el usuario acepta los terminos de privacidad del aplicativo, en caso de no aceptar las Politicas
+                    abstengase a usar el sistema de información
+                </strong>
+            </p>
+            <p>
                 <strong>Finalidad y Tratamiento: </strong> El Tratamiento debe obedecer a una finalidad legítima de acuerdo con la Constitución y la Ley, la cual debe ser informada al Titular. 
             </p>
             <p>

@@ -54,28 +54,31 @@ class PermisoSeeder extends Seeder
             'acceso' => 'no',
         ]);
 
-        //Rol Doctor
-        $rolDoctor = Role::create([
-            'nombre' => 'Área de la salud',
-            'slug' => 'doctor',
-            'descripcion' => 'Registro de doctor',
+        //User auditor
+        $userAuditor = User::where('email', 'auditor@auditor.com')->first();
+        if ($userAuditor) {
+            $userAuditor->delete();
+        }
+        $userAuditor = User::create([
+            'name'      =>  'auditor',
+            'email'     =>  'auditor@auditor.com',
+            'password'  =>  Hash::make('auditor'),
+        ]);
+
+
+        //Rol Auditor
+        $rolAuditor = Role::create([
+            'nombre' => 'Auditoria',
+            'slug' => 'auditor',
+            'descripcion' => 'Registro de datos y tablas ',
             'acceso' => 'no',
         ]);
 
-        // //Informacion Admin
-        // $informacion = InformacionUser::create([
-        //     'nombre' => 'Admin',
-        //     'apellidos' => 'Admin',
-        //     'tipo_documento' => 'CC',
-        //     'dni' => 12345,
-        //     'celular' => 12345,
-        //     'profesion' => 'Administrador',
-        //     'user_id' => 1,
-        // ]);
-       
 
         //Tabla role_user
         $userAdmin->roles()->sync([ $rolAdmin->id ]);
+
+        $userAuditor->roles()->sync([ $rolAuditor->id]);
 
         //Permiso
         $permiso_all = [];
@@ -617,7 +620,15 @@ class PermisoSeeder extends Seeder
             'descripcion' => 'Un usuario puede sus eliminar reportes',
         ]);
 
-        $permiso_all[] = $permiso->id;   
+        $permiso_all[] = $permiso->id;
+
+        $permiso = Permiso::create([
+            'nombre' => 'Auditoria de sistemas',
+            'slug' => 'auditoria',
+            'descripcion' => 'Solo el usuario auditor tiene este permiso',
+        ]);
+
+        $permiso_all[] = $permiso->id;
 
     }
 

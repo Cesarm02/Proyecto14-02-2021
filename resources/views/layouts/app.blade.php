@@ -122,9 +122,9 @@
                     <!-- DASHBOARD PACIENTE-->
                 @elseif(Auth()->user()->roles[0]->id == 2)
                     @include('dashboard.paciente')
-                    <!-- DASHBOARD SALUD-->
+                    <!-- DASHBOARD AUDITOR-->
                 @elseif(Auth()->user()->roles[0]->id == 3)
-                    @include('dashboard.salud')
+                    @include('dashboard.auditor')
                 @endif
     </div>
 </body>

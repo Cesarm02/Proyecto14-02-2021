@@ -72,7 +72,7 @@
                 </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
+                <small class="text-muted"><a href="{{route('soporte')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
             <div class="card">
@@ -292,7 +292,6 @@
 
         <div class="card-deck">
 
-
           <div class="card">
                 <div class="card-body">
                 <h5 class="card-title"><i class="far fa-newspaper"></i> Artículos</h5>
@@ -302,6 +301,42 @@
                 </div>
                 <div class="card-footer">
                 <small class="text-muted"><a href="{{route('diabetes')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+        </div>
+    @elseif(Auth()->user()->roles[0]->id == 3)
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-user"></i> Usuarios</h5>
+                <p class="card-text">
+                    Este icono hace referencia a la lista de usuarios registrados en el sistema
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('user.index')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-table"></i> Tablas</h5>
+                <p class="card-text">
+                    Este icono hace referencia a la lista de tablas del sistema
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('tablas')}}" class="btn btn-primary">Visualizar</a></small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title"><i class="far fa-eye"></i> Auditoria</h5>
+                <p class="card-text">
+                    Este icono hace referencia a la lista de cambios y modificaciones registradas
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-muted"><a href="{{route('auditoria')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
         </div>

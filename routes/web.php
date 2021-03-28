@@ -1,5 +1,6 @@
 <?php
 
+use App\Modelos\ControlCambios;
 use App\User;
 use App\Modelos\Role;
 use App\Modelos\Permiso;
@@ -75,11 +76,6 @@ Route::get('/politica', function(){
 //RUTA DE MEDICAMENTOS
 Route::resource('/medicamentos', 'MedicamentoController')->names('medicamentos');
 
-// // Ruta de eventos(Calendario)
-// Route::get('/calendario', function(){
-//     return view('eventos.index');
-// })->name('calendario');
-
 Route::resource('eventos', 'CitasMedicasController')->names('eventos');
 
 //RUTA DE GLUCOMETRIAS
@@ -106,6 +102,7 @@ Route::resource('/historial', 'HistorialController')->names('historial');
 //Ruta de reportes
 Route::resource('/reportes', 'ReportesController')->names('reportes');
 
+//RUTAS DE GRAFICAS
 Route::post('/graficas', 'ReportesController@peso');
 Route::get('/graficaPeso', 'ReportesController@graficaPeso')->name('grafica_peso');
 
@@ -119,9 +116,26 @@ Route::get('/graficaPeso/imprimir', 'ReportesController@imprimirPeso');
 Route::get('/graficaEjercicio/imprimir', 'ReportesController@imprimirEjercicio');
 Route::get('/graficaGlucometria/imprimir', 'ReportesController@imprimirGlucometria');
 
-
+//RUTA DE PERFILES
 Route::resource('/perfil', 'PerfilController')->names('perfil');
 Route::resource('/user/resumen', 'ResumenMedicoController')->names('resumen');
 // Route::get('storage-link', function(){
 //     Artisan::call('storage:link');
 // });
+
+//RUTAS DE HOME
+Route::get('/soporte', function(){
+    return view('privacidad.soporte');
+})->name('soporte');
+
+//RUTAS DE AUDITORIA
+Route::get('/tablas', function(){
+    return view('Auditoria.tablas');
+})->name('tablas');
+
+Route::get('/auditoria', function(){
+    $datos = ControlCambios::all();
+    return view('Auditoria.auditoria', compact('datos'));
+})->name('auditoria');
+
+

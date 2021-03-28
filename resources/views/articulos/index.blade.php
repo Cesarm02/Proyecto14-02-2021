@@ -15,7 +15,10 @@
             <div class="card">
                 <div class="card-header">
                     {{ __('Artículos') }}
+                @can('haveaccess', 'articulos.create')
+
                     <a href="{{route('publicaciones.create')}} " class="btn btn-sm btn-primary float-right"> Crear </a>
+                @endcan
                 </div>
 
                 <div class="card-body ">

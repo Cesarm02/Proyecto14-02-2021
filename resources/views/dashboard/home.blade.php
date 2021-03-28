@@ -18,7 +18,7 @@
                 </ul>
             </li>
         </div>
-        <div class="line"><a href="" class="fas fa-user"><font>Soporte</font></a></div>
+        <div class="line"><a href="{{route('soporte')}}" class="fas fa-user"><font>Soporte</font></a></div>
         <div class="line"><a href="{{route('politica')}}" class="fas fa-book-reader"><font>Politicas</font></a></div>
 
     </div>

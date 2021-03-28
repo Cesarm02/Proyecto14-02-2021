@@ -7,6 +7,7 @@ use App\Modelos\Role;
 use Illuminate\Http\Request;
 use App\Modelos\ControlCambios;
 use App\Modelos\InformacionUser;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -18,6 +19,7 @@ class UserController extends Controller
     public function index()
     {
 
+        // dd(Hash::make('auditor'));
         // dd(Auth()->user()->roles[0]->id);
         $this->authorize('haveaccess', "user.index");
 
