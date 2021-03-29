@@ -20,7 +20,7 @@ class AlimentosController extends Controller
         $this->authorize('haveaccess', 'alimentos.index');
         $usuario = Auth::user()->id;
         $alimentos =ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
-        dd($alimentos);
+        // dd($alimentos);
         // return view('alimentos.index');        
         // return view('Auditoria.tablas', compact('alimentos'));
         return view('Alimentos.index', compact('alimentos'));
@@ -70,11 +70,11 @@ class AlimentosController extends Controller
         //     'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla resumen_cegs[Alimentos]',
         //     'id_usuario' => Auth()->user()->id
         // ]);
-        return view('Alimentos.index');   
+        // return view('Alimentos.index');   
         
         // dd($request->all());
-        // return redirect()->route('Alimentos.index')
-        // ->with('status_success', 'Alimento agregado correctamente');
+        return redirect()->route('Alimentos.index')
+        ->with('status_success', 'Alimento agregado correctamente');
    
     }
 
