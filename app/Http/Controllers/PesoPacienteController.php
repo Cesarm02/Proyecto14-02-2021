@@ -446,7 +446,7 @@ class PesoPacienteController extends Controller
                 }
             }
 
-            dd($request->all());
+            // dd($request->all());
 
             $datos = PesoPaciente::create([
 
@@ -466,9 +466,10 @@ class PesoPacienteController extends Controller
                 'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla Peso',
                 'id_usuario' => Auth()->user()->id
             ]);
+                return view('Auditoria.tablas');
 
-            return redirect()->route('peso.index')
-                ->with('status_success', 'Peso agregado correctamente');
+            // return redirect()->route('peso.index')
+            //     ->with('status_success', 'Peso agregado correctamente');
         }else{
             return redirect()->route('peso.index')
                 ->with('falla', 'Debes agregar primero tu edad y sexo en la sección de datos personales');
