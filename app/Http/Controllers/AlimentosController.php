@@ -55,14 +55,20 @@ class AlimentosController extends Controller
             'descripcion' => 'required'
         ]);
 
-        $usuario = Auth::user()->id;
-        $alimentos = ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
-        return view('Alimentos.index', compact('alimentos'));
-        
+        $dato = ResumenCeg::create([
+            'informacion_user_id' => Auth()->user()->id,
+            'categoria' => 'comida',
+        ]);
         // $alimento = ResumenCeg::create([
         //     'informacion_user_id' => Auth()->user()->id,
         //     'categoria' => 'comida',
         // ] + $request->all());
+
+        $usuario = Auth::user()->id;
+        $alimentos = ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
+        return view('Alimentos.index', compact('alimentos'));
+        
+
 
         // $alimentos = ResumenCeg::create([
             //     'informacion_user_id' => auth()->user()->id,
