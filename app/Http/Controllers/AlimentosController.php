@@ -46,7 +46,9 @@ class AlimentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd("entro");
+        return view('Auditoria.tablas');
+
         // $this->authorize('haveaccess', 'alimentos.create');
         // dd($request->all());
 
@@ -76,7 +78,6 @@ class AlimentosController extends Controller
         
         // return redirect()->route('Alimentos.index')
         // ->with('status_success', 'Alimento agregado correctamente');
-        dd("entro");
     }
 
     /**
