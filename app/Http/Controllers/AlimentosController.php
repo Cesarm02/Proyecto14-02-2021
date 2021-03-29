@@ -54,12 +54,12 @@ class AlimentosController extends Controller
             'descripcion' => 'required'
         ]);
 
-        dd("entro");
         $alimentos = ResumenCeg::create([
             'informacion_user_id' => auth()->user()->id,
             'categoria' => 'comida'
         ] + $request->all());
-
+            
+            dd("entro");
         ControlCambios::create([
             'fecha_hora' => date('Y/m/d H:i:s', time()),
             'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla resumen_cegs[Alimentos]',
