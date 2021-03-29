@@ -446,14 +446,16 @@ class PesoPacienteController extends Controller
                 }
             }
 
-            dd($request->all());
+            // dd($request->all());
 
             $datos = PesoPaciente::create([
                 'fecha' => date('Y/m/d H:i:s', time()),
                 'imc' => $indice,
                 'informacion_user_id' => auth()->user()->id,
                 'comentario' => $comentario,
-            ] + $request->all());
+                'peso' => $request->peso,
+                'altura' => $request->altura
+            ]);
 
             // dd("Entro");
             
