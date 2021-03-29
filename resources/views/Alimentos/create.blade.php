@@ -26,27 +26,27 @@
                         method="POST"
                         enctype="multipart/form-data"
                     >
-                    <div class="form-row">
+                        <div class="form-row">
 
-                        <div class="form-group col-md-8">
-                            <label >Fecha *</label>
-                            <input type="date" name="fecha" class="form-control" required>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label >Hora * </label>
-                            <input type="time" name="hora" class="form-control" id="hora" required> 
-                        </div>
+                            <div class="form-group col-md-8">
+                                <label >Fecha *</label>
+                                <input type="date" name="fecha" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label >Hora * </label>
+                                <input type="time" name="hora" class="form-control" id="hora" required> 
+                            </div>
 
-                        <div class="form-group col-md-12">
-                            <label >Comida *</label>
-                            <select name="tipo" class="form-control">
-                                <option value="desayuno" selected>Desayuno</option>
-                                <option value="almuerzo" >Almuerzo</option>
-                                <option value="comida">Comida</option>
-                                <option value="refrigerio">Refrigerio</option>
-                            </select>
+                            <div class="form-group col-md-12">
+                                <label >Comida *</label>
+                                <select name="tipo" class="form-control">
+                                    <option value="desayuno" selected>Desayuno</option>
+                                    <option value="almuerzo" >Almuerzo</option>
+                                    <option value="comida">Comida</option>
+                                    <option value="refrigerio">Refrigerio</option>
+                                </select>
+                            </div>
                         </div>
-
                         <div class="form-group">
                             <label >Comentarios </label>
                             <textarea name="descripcion" rows="6" class="form-control" ></textarea>
