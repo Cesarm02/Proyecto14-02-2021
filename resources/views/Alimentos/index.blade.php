@@ -21,52 +21,7 @@
         </h3>
     </div>
 
-    @include('personalizar.mensaje')
-    <div class="table-responsive">
-        <table id="alimentos" style="text-align:center"  class="table table-striped table-bordered ">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                        <th>Comida</th>
-                        <th>Descripción</th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($alimentos as $alimento)
-                    <tr>
-                        <td> {{$alimento->fecha}}</td>
-                        <td> {{$alimento->hora}}</td>
-                        <td> {{$alimento->tipo}}</td>
-                        <td> {{$alimento->descripcion}}</td>
-                        <td > <a href="{{route('alimentos.show', $alimento->id)}}" class="btn btn-outline-info "> Ver </a></td>
-                        <td > <a href="{{route('alimentos.edit', $alimento->id)}}" class="btn btn-outline-success " > Editar </a></td>
-                        <td >
-                            <form action="{{route('alimentos.destroy', $alimento->id)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-outline-danger" onclick="return confirm('¿Desea eliminar el {{$alimento->id}}?')">Eliminar</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-        </table>
-    </div>
+   
 
 
 @endsection
-<script>
-
-    $(document).ready(function() {
-        $('#alimentos').DataTable({
-            "language": {
-            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-            }
-        });
-    });
-
-</script>
