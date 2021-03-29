@@ -18,6 +18,7 @@ class AlimentosController extends Controller
     {
         //
         $this->authorize('haveaccess', 'alimentos.index');
+        dd("entra");
         $usuario = Auth::user()->id;
         $alimentos =ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
         return view('alimentos.index', compact('alimentos'));
