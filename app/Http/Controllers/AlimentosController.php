@@ -46,7 +46,7 @@ class AlimentosController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'alimentos.create');
+        // $this->authorize('haveaccess', 'alimentos.create');
         $request->validate([
             'fecha' => 'required',
             'hora' => 'required',
@@ -54,6 +54,7 @@ class AlimentosController extends Controller
             'descripcion' => 'required'
         ]);
 
+        dd("entro");
         $alimentos = ResumenCeg::create([
             'informacion_user_id' => auth()->user()->id,
             'categoria' => 'comida'
@@ -64,7 +65,6 @@ class AlimentosController extends Controller
             'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla resumen_cegs[Alimentos]',
             'id_usuario' => Auth()->user()->id
         ]);
-        dd("entro");
         return redirect()->route('Alimentos.index')
         ->with('status_success', 'Alimento agregado correctamente');
    
