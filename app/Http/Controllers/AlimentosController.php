@@ -55,10 +55,13 @@ class AlimentosController extends Controller
             'descripcion' => 'required'
         ]);
 
-        $dato = ResumenCeg::create([
+        $dato = [
             'informacion_user_id' => 3,
             'categoria' => 'comida',
-        ]);
+        ] + $request->all();
+
+        dd($dato);
+
         // $alimento = ResumenCeg::create([
         //     'informacion_user_id' => Auth()->user()->id,
         //     'categoria' => 'comida',
