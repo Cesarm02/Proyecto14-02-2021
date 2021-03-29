@@ -47,17 +47,17 @@ class AlimentosController extends Controller
     public function store(Request $request)
     {
         $this->authorize('haveaccess', 'alimentos.create');
+
+        $request->validate([
+            'fecha' => 'required',
+            'hora' => 'required',
+            'tipo' => 'required',
+            'descripcion' => 'required'
+        ]);
+
         $usuario = Auth::user()->id;
         $alimentos = ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
         return view('Alimentos.index', compact('alimentos'));
-        // dd($request->all());
-
-        // $request->validate([
-        //     'fecha' => 'required',
-        //     'hora' => 'required',
-        //     'tipo' => 'required',
-        //     'descripcion' => 'required'
-        // ]);
         
         // $alimento = ResumenCeg::create([
         //     'informacion_user_id' => Auth()->user()->id,
