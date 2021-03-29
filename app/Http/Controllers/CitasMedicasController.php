@@ -40,7 +40,7 @@ class CitasMedicasController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'citas.store');
+        $this->authorize('haveaccess', 'citas.create');
         
         $datosEvento = request()->except(['_token', '_method']);
         

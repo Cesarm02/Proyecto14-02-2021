@@ -50,7 +50,7 @@ class MedicamentoController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'medicamentos.store');
+        $this->authorize('haveaccess', 'medicamentos.create');
 
         $request->validate([
             'nombre' => 'required',

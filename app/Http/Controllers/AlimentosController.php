@@ -44,7 +44,7 @@ class AlimentosController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'alimentos.store');
+        $this->authorize('haveaccess', 'alimentos.create');
         $request->validate([
             'fecha' => 'required',
             'hora' => 'required',

@@ -52,7 +52,7 @@ class GlucometriaController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'glucometrias.store');
+        $this->authorize('haveaccess', 'glucometrias.create');
         $request->validate([
             'fecha' => 'required',
             'hora' => 'required',

@@ -33,7 +33,7 @@ class PesoPacienteController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'pesos.store');
+        $this->authorize('haveaccess', 'pesos.create');
 
         $request->validate([
             'peso' => 'required',

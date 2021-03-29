@@ -50,7 +50,7 @@ class AntescedentesController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'antecedentes.store');
+        $this->authorize('haveaccess', 'antecedentes.create');
 
         $request->validate([
             'tipo' => 'required',

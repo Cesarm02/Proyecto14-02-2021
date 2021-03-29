@@ -45,7 +45,7 @@ class InsulinasController extends Controller
     public function store(Request $request)
     {
         //
-        $this->authorize('haveaccess', 'insulinas.store');
+        $this->authorize('haveaccess', 'insulinas.create');
 
         $request->validate([
             'nombre' => 'required',

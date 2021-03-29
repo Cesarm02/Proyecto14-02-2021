@@ -47,7 +47,7 @@ class PublicacionesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('haveaccess', 'articulos.store');
+        $this->authorize('haveaccess', 'articulos.create');
         $request->validate([
             'titulo' => 'required|max: 120',
             'descripcion' => 'required',
