@@ -47,7 +47,7 @@ class AlimentosController extends Controller
     public function store(Request $request)
     {
         // dd("entro");
-        return view('Auditoria.tablas');
+        return view('Alimentos.index');
 
         // $this->authorize('haveaccess', 'alimentos.create');
         // dd($request->all());
