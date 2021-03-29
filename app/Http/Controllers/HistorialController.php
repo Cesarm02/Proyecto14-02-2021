@@ -34,7 +34,8 @@ class HistorialController extends Controller
         $tratamientos = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'tratamientos')->get();
         $intervenciones = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'intervenciones_quirúrgicas')->get();
         // dd("entro");
-        return view('Auditoria.tablas');
+        // return view('Auditoria.tablas');
+        return view('historial.index');
         // return view('historial.index', compact('pesos', 'medicamentos', 'glucometrias', 'antecedentes', 'personales', 'familiares', 'alergias', 'vacunas', 'tratamientos', 'intervenciones'));
     }
 
