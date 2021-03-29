@@ -47,8 +47,10 @@ class AlimentosController extends Controller
     public function store(Request $request)
     {
         // dd("entro");
-        return redirect()->route('Alimentos.index');
-
+        // return redirect()->route('Alimentos.index');
+        $usuario = Auth::user()->id;
+        $alimentos = ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
+        return view('Alimentos.index', compact('alimentos'));
         // $this->authorize('haveaccess', 'alimentos.create');
         // dd($request->all());
 
