@@ -1,10 +1,10 @@
 @extends('layouts.app')
-   {{-- <head>
+   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- </head> --}}
+ </head>
 @section('content')
 <div class="container">
     <nav aria-label="breadcrumb">
@@ -13,15 +13,15 @@
         <li class="breadcrumb-item active">Alimentos</a></li>
     </ol>
     </nav>
-    {{-- <div class="alert alert-info class=card-header" role="alert">
+    <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de <strong> Alimentos </strong> 
             @can('haveaccess', 'alimentos.create')
                 <a class="btn btn-primary float-right" href="{{route('alimentos.create')}}">Agregar Alimentos</a>
             @endcan
         </h3>
-    </div> --}}
+    </div>
 
-    {{-- @include('personalizar.mensaje')
+    @include('personalizar.mensaje')
     <div class="table-responsive">
         <table id="alimentos" style="text-align:center"  class="table table-striped table-bordered ">
                 <thead>
@@ -55,11 +55,11 @@
                     @endforeach
                 </tbody>
         </table>
-    </div> --}}
+    </div>
 
 
 @endsection
-{{-- <script>
+<script>
 
     $(document).ready(function() {
         $('#alimentos').DataTable({
@@ -69,4 +69,4 @@
         });
     });
 
-</script> --}}
+</script>
