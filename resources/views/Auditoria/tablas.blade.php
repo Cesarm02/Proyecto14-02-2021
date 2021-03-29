@@ -17,7 +17,6 @@
         <h3> Sección de <strong> tablas </strong> </h3>
     </div>
 
-    {{$alimentos}}
     @can('haveaccess', 'auditoria')
 
         @include('personalizar.mensaje')
