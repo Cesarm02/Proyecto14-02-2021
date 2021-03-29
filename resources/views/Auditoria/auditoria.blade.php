@@ -42,6 +42,7 @@
             </table>
         </div>
         </div>
+        @endcan
         @endsection
         <script>
             $(document).ready(function() {
@@ -53,4 +54,3 @@
                 });
             });
         </script>
-    @endcan
