@@ -82,7 +82,7 @@ class MedicamentoController extends Controller
     public function show(Medicamento $medicamento)
     {
         //
-        $this->authorize('haveaccess', 'medicamentos.store');
+        $this->authorize('haveaccess', 'medicamentos.show');
         return view('medicamentos.show', compact('medicamento'));
     }
 
