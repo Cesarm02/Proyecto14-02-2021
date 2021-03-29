@@ -16,6 +16,8 @@
         <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de <strong> tablas </strong> </h3>
     </div>
+
+    {{$alimentos}}
     @can('haveaccess', 'auditoria')
 
         @include('personalizar.mensaje')
