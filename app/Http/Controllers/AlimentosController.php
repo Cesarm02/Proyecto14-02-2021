@@ -53,11 +53,11 @@ class AlimentosController extends Controller
             'tipo' => 'required',
             'descripcion' => 'required'
         ]);
-        dd($request->all());
+        // dd($request->all());
 
         $alimentos = ResumenCeg::create([
             'informacion_user_id' => auth()->user()->id,
-            'categoria' => 'comida'
+            // 'categoria' => 'comida'
         ] + $request->all());
             
         ControlCambios::create([
