@@ -21,8 +21,8 @@ class AlimentosController extends Controller
         $usuario = Auth::user()->id;
         $alimentos =ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
         // return view('alimentos.index');        
-        return view('Auditoria.tablas', compact('alimentos'));
-        // return view('alimentos.index', compact('alimentos'));
+        // return view('Auditoria.tablas', compact('alimentos'));
+        return view('alimentos.index', compact('alimentos'));
     }
 
     /**
