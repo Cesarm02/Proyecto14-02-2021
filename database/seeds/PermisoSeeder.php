@@ -18,12 +18,12 @@ class PermisoSeeder extends Seeder
     public function run()
     {
         //Truncate tables
-        DB::statement("SET foreign_key_checks=0");
+        // DB::statement("SET foreign_key_checks=0");
             DB::table('role_user')->truncate();
             DB::table('permiso_role')->truncate();
             Permiso::truncate();
             Role::truncate();
-        DB::statement("SET foreign_key_checks=1");
+        // DB::statement("SET foreign_key_checks=1");
 
 
         //User admin
