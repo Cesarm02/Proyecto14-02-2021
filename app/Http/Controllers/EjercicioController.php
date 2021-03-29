@@ -105,7 +105,7 @@ class EjercicioController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->authorize('haveaccess', 'ejercicios.update');
+        $this->authorize('haveaccess', 'ejercicios.edit');
         $request->validate([
             'fecha' => 'required',
             'hora' => 'required',

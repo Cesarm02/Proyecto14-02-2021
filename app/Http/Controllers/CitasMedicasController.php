@@ -88,7 +88,7 @@ class CitasMedicasController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->authorize('haveaccess', 'citas.update');
+        $this->authorize('haveaccess', 'citas.edit');
         $datosEvento = request()->except(['_token', '_method']);
         $respuesta = CitasMedica::where('id','=',$id)->update($datosEvento);
 

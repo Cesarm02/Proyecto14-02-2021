@@ -106,7 +106,7 @@ class AlimentosController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->authorize('haveaccess', 'alimentos.update');
+        $this->authorize('haveaccess', 'alimentos.edit');
         $request->validate([
             'fecha' => 'required',
             'hora' => 'required',

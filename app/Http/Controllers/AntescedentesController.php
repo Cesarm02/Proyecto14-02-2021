@@ -96,7 +96,7 @@ class AntescedentesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->authorize('haveaccess', 'antecedentes.update');
+        $this->authorize('haveaccess', 'antecedentes.edit');
 
         $request->validate([
             'tipo' => 'required',

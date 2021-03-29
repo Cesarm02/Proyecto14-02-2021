@@ -107,7 +107,7 @@ class InsulinasController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->authorize('haveaccess', 'insulinas.update');
+        $this->authorize('haveaccess', 'insulinas.edit');
 
         $request->validate([
             'nombre' => 'required',

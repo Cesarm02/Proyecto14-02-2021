@@ -110,7 +110,7 @@ class MedicamentoController extends Controller
     public function update(Request $request, Medicamento $medicamento)
     {
         //
-        $this->authorize('haveaccess', 'medicamentos.update');
+        $this->authorize('haveaccess', 'medicamentos.edit');
         $request->validate([
             'nombre' => 'required',
             'cantidad' => 'required',

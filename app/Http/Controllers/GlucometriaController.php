@@ -116,7 +116,7 @@ class GlucometriaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->authorize('haveaccess', 'glucometrias.update');
+        $this->authorize('haveaccess', 'glucometrias.edit');
         $request->validate([
             'fecha' => 'required',
             'hora' => 'required',
