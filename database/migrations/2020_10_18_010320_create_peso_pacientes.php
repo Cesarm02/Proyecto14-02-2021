@@ -17,7 +17,7 @@ class CreatePesoPacientes extends Migration
             $table->id();
             $table->date('fecha')->nullable();
             $table->integer('peso');
-            $table->integer('imc')->nullable();
+            $table->double('imc')->nullable();
             $table->string('comentario')->nullable();
             $table->integer('altura');
             $table->foreignId('informacion_user_id')->references('id')->on('informacion_users')->onDelete('cascade')->comment('REFERENCIA HACIA PACIENTES');
