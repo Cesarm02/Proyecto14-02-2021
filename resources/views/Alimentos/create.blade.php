@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="form-group col-md-12">
-                            <label >Descripción
+                            <label >Descripción *
                                  </label>
                             <textarea name="descripcion" rows="6" class="form-control" ></textarea>
                         </div>
