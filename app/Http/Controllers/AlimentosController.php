@@ -57,12 +57,10 @@ class AlimentosController extends Controller
 
         $dato = [
             'informacion_user_id' => Auth()->user()->id,
-            'categoria' => 'comida',
+            'categoria' => 'glucometria',
         ] + $request->all();
-
-        // $alimento = ResumenCeg::create($dato);
-
-        // dd($alimento);
+        $alimento = ResumenCeg::create($dato);
+        dd($alimento);
 
         // $alimento = ResumenCeg::create([
         //     'informacion_user_id' => Auth()->user()->id,
@@ -70,12 +68,6 @@ class AlimentosController extends Controller
         // ] + $request->all());
         return redirect()->route('alimentos.index')
         ->with('status_success', 'Alimento agregado correctamente');
-
-        // $usuario = Auth::user()->id;
-        // $alimentos = ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'comida')->get();
-        // return view('Alimentos.index', compact('alimentos'));
-        
-
 
         // $alimentos = ResumenCeg::create([
             //     'informacion_user_id' => auth()->user()->id,
@@ -87,10 +79,7 @@ class AlimentosController extends Controller
         //     'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla resumen_cegs[Alimentos]',
         //     'id_usuario' => Auth()->user()->id
         // ]);
-        // return view('Alimentos.index');   
-        
-        // return redirect()->route('Alimentos.index')
-        // ->with('status_success', 'Alimento agregado correctamente');
+ 
     }
 
     /**
@@ -148,7 +137,7 @@ class AlimentosController extends Controller
             'id_usuario' => Auth()->user()->id
         ]);
 
-        return redirect()->route('Alimentos.index')
+        return redirect()->route('alimentos.index')
         ->with('status_success', 'Alimento actualizado correctamente');
  
     }
@@ -171,7 +160,7 @@ class AlimentosController extends Controller
         ]);
         $alimento->delete();
 
-        return redirect()->route('Alimentos.index')
+        return redirect()->route('alimentos.index')
         ->with('status_success', 'Alimento eliminado correctamente');
  
     }
