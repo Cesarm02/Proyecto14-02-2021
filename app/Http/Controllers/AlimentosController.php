@@ -34,7 +34,7 @@ class AlimentosController extends Controller
     {
         //
         $this->authorize('haveaccess', 'alimentos.create');
-        return view('alimentos.create');
+        return view('Alimentos.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class AlimentosController extends Controller
             'descripcion' => 'Se crea registro ' . $request->get('id') . ' en la tabla resumen_cegs[Alimentos]',
             'id_usuario' => Auth()->user()->id
         ]);
-        return redirect()->route('alimentos.index')
+        return redirect()->route('Alimentos.index')
         ->with('status_success', 'Alimento agregado correctamente');
    
 
@@ -81,7 +81,7 @@ class AlimentosController extends Controller
         //
         $this->authorize('haveaccess', 'alimentos.show');
         $alimento = ResumenCeg::findOrFail($id);
-        return view('alimentos.show', compact('alimento'));
+        return view('Alimentos.show', compact('alimento'));
     }
 
     /**
@@ -95,7 +95,7 @@ class AlimentosController extends Controller
         //
         $this->authorize('haveaccess', 'alimentos.edit');
         $alimento = ResumenCeg::findOrFail($id);
-        return view('alimentos.edit', compact('alimento'));
+        return view('Alimentos.edit', compact('alimento'));
     }
 
     /**
@@ -125,7 +125,7 @@ class AlimentosController extends Controller
             'id_usuario' => Auth()->user()->id
         ]);
 
-        return redirect()->route('alimentos.index')
+        return redirect()->route('Alimentos.index')
         ->with('status_success', 'Alimento actualizado correctamente');
  
     }
@@ -148,7 +148,7 @@ class AlimentosController extends Controller
         ]);
         $alimento->delete();
 
-        return redirect()->route('alimentos.index')
+        return redirect()->route('Alimentos.index')
         ->with('status_success', 'Alimento eliminado correctamente');
  
     }
