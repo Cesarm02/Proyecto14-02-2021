@@ -74,9 +74,9 @@ class AlimentosController extends Controller
         // ]);
         // return view('Alimentos.index');   
         
-        return redirect()->route('Alimentos.index')
-        ->with('status_success', 'Alimento agregado correctamente');
-   
+        // return redirect()->route('Alimentos.index')
+        // ->with('status_success', 'Alimento agregado correctamente');
+        dd("entro");
     }
 
     /**
