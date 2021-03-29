@@ -165,7 +165,7 @@
   </div>
 </div>
 
-<div class="accordion" id="accordionExample" style="margin-bottom: 10px; padding: 10px;">
+{{-- <div class="accordion" id="accordionExample" style="margin-bottom: 10px; padding: 10px;">
   <div class="card" style="border-radius: 10px;">
     <div class="card-header" id="heading" style="background-color: #DCDCDC;">
       <h4 class="mb-0">
@@ -218,7 +218,7 @@
         </div>
       </div>
   </div>
-</div>
+</div> --}}
 
 <div class="accordion" id="accordionExample" style="margin-bottom: 10px; padding: 10px;">
   <div class="card" style="border-radius: 10px;">

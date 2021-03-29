@@ -21,12 +21,12 @@ class HistorialController extends Controller
     {
         //Peso, medicamentos, glucometrias, insulinas, antecedentes
         $this->authorize('haveaccess', 'historial.index');
-        dd("entro");
         $usuario = Auth::user()->id;
         $pesos = PesoPaciente::where('informacion_user_id', $usuario)->orderBY('created_at', 'Desc')->take(4)->get();
         $medicamentos = Medicamento::where('informacion_user_id', $usuario)->get();
         $glucometrias = ResumenCeg::where('informacion_user_id', $usuario)->where('categoria', 'glucometria')->orderBY('created_at', 'Desc')->get();
-        $insulinas = Insulina::where('informacion_user_id', $usuario)->get();
+        // $insulinas = Insulina::where('informacion_user_id', $usuario)->get();
+        dd("entro");
 
         $personales = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'antecedentes_personales')->get();
         $familiares = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'antecedentes_familiares')->get();
