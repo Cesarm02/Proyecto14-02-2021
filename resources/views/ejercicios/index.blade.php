@@ -15,7 +15,8 @@
     </nav>
     <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de <strong> Ejercicios </strong> 
-            @can('haveaccess', 'ejercicio.create')
+            @can('haveaccess', 'ejercicios.create')
+            
                 <a class="btn btn-primary float-right" href="{{route('ejercicio.create')}}">Agregar Ejercicio</a>
             @endcan
         </h3>
