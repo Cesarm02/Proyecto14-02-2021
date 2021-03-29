@@ -13,15 +13,15 @@
         <li class="breadcrumb-item active">Alimentos</a></li>
     </ol>
     </nav>
-    <div class="alert alert-info class=card-header" role="alert">
+    {{-- <div class="alert alert-info class=card-header" role="alert">
         <h3> Sección de <strong> Alimentos </strong> 
             @can('haveaccess', 'alimentos.create')
                 <a class="btn btn-primary float-right" href="{{route('alimentos.create')}}">Agregar Alimentos</a>
             @endcan
         </h3>
-    </div>
+    </div> --}}
 
-    @include('personalizar.mensaje')
+    {{-- @include('personalizar.mensaje')
     <div class="table-responsive">
         <table id="alimentos" style="text-align:center"  class="table table-striped table-bordered ">
                 <thead>
@@ -55,7 +55,7 @@
                     @endforeach
                 </tbody>
         </table>
-    </div>
+    </div> --}}
 
 
 @endsection
