@@ -55,17 +55,10 @@ class AlimentosController extends Controller
             'descripcion' => 'required'
         ]);
 
-        $glucometria = ResumenCeg::create([
-            'informacion_user_id' => auth()->user()->id,
-            'categoria' => 'glucometria'
+        $alimento = ResumenCeg::create([
+            'informacion_user_id' => Auth()->user()->id,
+            'categoria' => 'comida',
         ] + $request->all());
-
-        dd($glucometria);
-
-        // $alimento = ResumenCeg::create([
-        //     'informacion_user_id' => Auth()->user()->id,
-        //     'categoria' => 'comida',
-        // ] + $request->all());
         return redirect()->route('alimentos.index')
         ->with('status_success', 'Alimento agregado correctamente');
 
