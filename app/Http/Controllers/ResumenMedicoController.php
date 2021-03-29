@@ -89,7 +89,7 @@ class ResumenMedicoController extends Controller
         $tratamientos = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'tratamientos')->get();
         $intervenciones = AntecedentesPersonale::where('informacion_user_id', $usuario)->where('tipo', 'intervenciones_quirúrgicas')->get();
         
-        return view('user.resumen', compact('pesos', 'medicamentos', 'glucometrias', 'insulinas', 'antecedentes', 'personales', 'familiares', 'alergias', 'vacunas', 'tratamientos','intervenciones', 'user'));
+        return view('user.resumen', compact('pesos', 'medicamentos', 'glucometrias', 'insulinas', 'personales', 'familiares', 'alergias', 'vacunas', 'tratamientos','intervenciones', 'user'));
 
     }
 
