@@ -56,11 +56,8 @@
                 </tbody>
         </table>
     </div>
-
-
 @endsection
 <script>
-
     $(document).ready(function() {
         $('#alimentos').DataTable({
             "language": {
@@ -68,5 +65,4 @@
             }
         });
     });
-
 </script>
