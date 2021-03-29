@@ -19,6 +19,7 @@ class HistorialController extends Controller
      */
     public function index()
     {
+        dd("entro");
         //Peso, medicamentos, glucometrias, insulinas, antecedentes
         $this->authorize('haveaccess', 'historial.index');
         $usuario = Auth::user()->id;
