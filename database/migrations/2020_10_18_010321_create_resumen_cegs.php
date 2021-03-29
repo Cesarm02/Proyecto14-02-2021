@@ -17,8 +17,8 @@ class CreateResumenCegs extends Migration
         Schema::create('resumen_cegs', function (Blueprint $table) {
             $table->id();
             $table->date('fecha');
-            $table->enum('tipo', ['desayuno', 'almuerzo', 'comida', 'refrigerio']);
-            $table->enum('tipo_hora', ['antes', 'despues']);
+            $table->enum('tipo', ['desayuno', 'almuerzo', 'comida', 'refrigerio'])->nullable();
+            $table->enum('tipo_hora', ['antes', 'despues'])->nullable();
 
             $table->time('hora')->nullable();
             $table->integer('tiempo_ejercicio')->nullable();
