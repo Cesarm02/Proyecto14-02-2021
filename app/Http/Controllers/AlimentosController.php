@@ -56,7 +56,7 @@ class AlimentosController extends Controller
         ]);
 
         $dato = [
-            'informacion_user_id' => 3,
+            'informacion_user_id' => Auth()->user()->id,
             'categoria' => 'comida',
         ] + $request->all();
 
