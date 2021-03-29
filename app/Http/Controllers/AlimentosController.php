@@ -48,12 +48,14 @@ class AlimentosController extends Controller
     {
         //
         // $this->authorize('haveaccess', 'alimentos.create');
-        $request->validate([
-            'fecha' => 'required',
-            'hora' => 'required',
-            'tipo' => 'required',
-            'descripcion' => 'required'
-        ]);
+        // dd($request->all());
+
+        // $request->validate([
+        //     'fecha' => 'required',
+        //     'hora' => 'required',
+        //     'tipo' => 'required',
+        //     'descripcion' => 'required'
+        // ]);
         
         // $alimento = ResumenCeg::create([
         //     'informacion_user_id' => Auth()->user()->id,
@@ -72,7 +74,6 @@ class AlimentosController extends Controller
         // ]);
         // return view('Alimentos.index');   
         
-        // dd($request->all());
         return redirect()->route('Alimentos.index')
         ->with('status_success', 'Alimento agregado correctamente');
    
