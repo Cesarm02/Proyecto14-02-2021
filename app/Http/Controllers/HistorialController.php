@@ -19,9 +19,9 @@ class HistorialController extends Controller
      */
     public function index()
     {
-        dd("entro");
         //Peso, medicamentos, glucometrias, insulinas, antecedentes
         $this->authorize('haveaccess', 'historial.index');
+        dd("entro");
         $usuario = Auth::user()->id;
         $pesos = PesoPaciente::where('informacion_user_id', $usuario)->orderBY('created_at', 'Desc')->take(4)->get();
         $medicamentos = Medicamento::where('informacion_user_id', $usuario)->get();
