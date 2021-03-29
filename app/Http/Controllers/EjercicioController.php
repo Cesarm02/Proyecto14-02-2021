@@ -45,7 +45,7 @@ class EjercicioController extends Controller
     public function store(Request $request)
     {
         //
-        // $this->authorize('haveaccess', 'ejercicios.create');
+        $this->authorize('haveaccess', 'ejercicios.create');
         $request->validate([
             'fecha' => 'required',
             'hora' => 'required',
