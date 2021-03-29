@@ -55,11 +55,15 @@ class AlimentosController extends Controller
             'descripcion' => 'required'
         ]);
 
-            $alimentos = ResumenCeg::create([
-                'informacion_user_id' => auth()->user()->id,
-                'categoria' => 'comida'
-            ] + $request->all());
+            // $alimentos = ResumenCeg::create([
+            //     'informacion_user_id' => auth()->user()->id,
+            //     'categoria' => 'comida'
+            // ] + $request->all());
         
+        // $alimento = ResumenCeg::create([
+        //     'informacion_user_id' => Auth()->user()->id,
+        //     'categoria' => 'comida',
+        // ] + $request->all());
 
         ControlCambios::create([
             'fecha_hora' => date('Y/m/d H:i:s', time()),
@@ -67,14 +71,8 @@ class AlimentosController extends Controller
             'id_usuario' => Auth()->user()->id
         ]);
 
-        // $alimento = ResumenCeg::create([
-        //     'informacion_user_id' => Auth()->user()->id,
-        //     'categoria' => 'comida',
-        // ] + $request->all());
         return redirect()->route('alimentos.index')
         ->with('status_success', 'Alimento agregado correctamente');
-
-            
  
     }
 
