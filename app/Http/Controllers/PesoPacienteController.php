@@ -453,9 +453,7 @@ class PesoPacienteController extends Controller
                 // 'fecha' => date('Y/m/d H:i:s', time()),
                 // 'imc' => $indice,
                 'informacion_user_id' => auth()->user()->id,
-                // 'comentario' => $comentario,
-                // 'peso' => $request->peso,
-                // 'altura' => $request->altura
+                'comentario' => $comentario,
             ] + $request->all());
 
             // dd("Entro");
