@@ -65,7 +65,7 @@ class AlimentosController extends Controller
             'id_usuario' => Auth()->user()->id
         ]);
                 
-                dd($request->all());
+        // dd($request->all());
         return redirect()->route('Alimentos.index')
         ->with('status_success', 'Alimento agregado correctamente');
    
