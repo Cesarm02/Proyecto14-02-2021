@@ -55,7 +55,7 @@
   <div class="container">
 
     <div id="message">
-      <h1>Erro 500 Estamos trabajando para solucionarlo <i class="fas fa-exclamation-triangle"></i></h1>
+      <h1>Error 500 Estamos trabajando para solucionarlo <i class="fas fa-exclamation-triangle"></i></h1>
       <p>Lo sentimos, pero la página que esta buscando no se encuentra disponible</p>
     </div>
     <p id="footer">Ir hacia el menú de iconos <a href="{{route('inicio')}}" >Home</a>.</p>
