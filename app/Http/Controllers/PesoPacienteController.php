@@ -447,7 +447,7 @@ class PesoPacienteController extends Controller
             }
 
             // dd($request->all());
-
+            dd($indice);
             $datos = PesoPaciente::create([
 
                 'fecha' => date('Y/m/d H:i:s', time()),
