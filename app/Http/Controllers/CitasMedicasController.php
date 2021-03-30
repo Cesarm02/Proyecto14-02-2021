@@ -43,7 +43,7 @@ class CitasMedicasController extends Controller
         $this->authorize('haveaccess', 'citas.create');
         
         $datosEvento = request()->except(['_token', '_method']);
-        
+        dd($request->all());
         CitasMedica::insert($datosEvento);  
         
         ControlCambios::create([
