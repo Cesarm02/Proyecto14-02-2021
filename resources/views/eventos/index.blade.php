@@ -102,7 +102,7 @@
         function recolectarDatosGUI(method)
         {
           nuevoEvento = {
-            id:  $('#txtID').val(), 
+            id:  $('#txtID').val(0), 
             title: $('#txtTitulo').val(),
             descripcion: $('#txtDescripcion').val(),
             color: $('#txtColor').val(),
