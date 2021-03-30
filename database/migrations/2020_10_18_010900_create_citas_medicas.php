@@ -16,12 +16,12 @@ class CreateCitasMedicas extends Migration
         Schema::create('citas_medicas', function (Blueprint $table) {
             $table->id();
 
-            $table->string('title');
-            $table->text('descripcion');
-            $table->string('color');
-            $table->string('textColor');
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->string('title')->nullable();
+            $table->text('descripcion')->nullable();
+            $table->string('color')->nullable();
+            $table->string('textColor')->nullable();
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end')->nullable();
 
             $table->foreignId('informacion_user_id')->references('id')->on('informacion_users')->onDelete('cascade')->comment('REFERENCIA HACIA PACIENTES');
 
