@@ -127,7 +127,7 @@
             calendar.refetchEvents();
               
               },
-            error:function(){ alert("Hay un error");}
+            error:function(){ alert(error);}
           });
         }
 
