@@ -182,7 +182,7 @@
         {{-- d-none --}}
         <div class=""> 
           Id:
-          <input type="text" class="form-control" name="txtID" id="txtID" value="0" readonly>
+          <input type="text" class="form-control" name="txtID" id="txtID" placeholder="0" readonly>
           <br>
           Fecha
           <input type="text" class="form-control" name="txtFecha" id="txtFecha" readonly>
