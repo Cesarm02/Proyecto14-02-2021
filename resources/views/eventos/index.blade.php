@@ -125,8 +125,9 @@
             success:function(msg){
             $('#exampleModal').modal('toggle');
             calendar.refetchEvents();
+              
               },
-            error:function(){ alert(msg);}
+            error:function(){ alert("Hay un error");}
           });
         }
 
