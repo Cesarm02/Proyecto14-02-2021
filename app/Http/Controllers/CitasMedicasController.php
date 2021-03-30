@@ -44,7 +44,7 @@ class CitasMedicasController extends Controller
         
         $datosEvento = request()->except(['_token', '_method']);
         
-        // CitasMedica::insert($datosEvento);  
+        CitasMedica::insert($datosEvento);  
         
         ControlCambios::create([
             'fecha_hora' => date('Y/m/d H:i:s', time()),
