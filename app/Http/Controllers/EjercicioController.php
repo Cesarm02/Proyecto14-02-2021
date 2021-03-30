@@ -51,6 +51,7 @@ class EjercicioController extends Controller
             'hora' => 'required',
             'tipo_ejercicio' => 'required',
         ]);
+            dd($request->all());
         $ejercicio = ResumenCeg::create([
             'informacion_user_id' => auth()->user()->id,
             'categoria' => 'ejercicio'
