@@ -19,7 +19,7 @@
                 <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-book-reader"> </i>Manual tenico</h5>
                 <p class="card-text">
-                >El manual tecnico es utilizado por aquellas personas que brindaran soporte o desarrollaran modulos en el aplicativo
+                El manual tecnico es utilizado por aquellas personas que brindaran soporte o desarrollaran modulos en el aplicativo
                 </p>
                 </div>
                 <div class="card-footer">
