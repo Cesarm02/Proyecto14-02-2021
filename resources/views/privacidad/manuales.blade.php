@@ -37,8 +37,8 @@
                 <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
-                <footer class="blockquote-footer">ADMINISTRADOR <cite title="Source Title">Manuales</cite></footer>
         </div>
+        <footer class="blockquote-footer">ADMINISTRADOR <cite title="Source Title">Manuales</cite></footer>
 
     </div>
 </div>
