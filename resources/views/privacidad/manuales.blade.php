@@ -23,7 +23,7 @@
                 </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
+                <small class="text-muted"><a href="https://drive.google.com/file/d/1tH_IYVDPxdPVy_rd7mCHymDwW9zzmEKm/view?usp=sharing" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
             <div class="card">
