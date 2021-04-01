@@ -45,7 +45,7 @@
                 </p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted"><a href="" class="btn btn-primary">Visualizar</a></small>
+                <small class="text-muted"><a href="{{route('manuales')}}" class="btn btn-primary">Visualizar</a></small>
                 </div>
             </div>
             

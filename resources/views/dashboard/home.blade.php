@@ -5,7 +5,7 @@
     <div class="menu">        
         <div class="line"><a href="{{route('inicio')}}" class="fas fa-icons"><font>Inicio</font></a></div>
         <div class="line"><a href="{{route('diabetes')}}" class="far fa-newspaper"><font>Artículos</font></a></div>
-        <div class="line"><a href="" class="fas fa-book-reader"><font>Manuales</font></a></div>
+        <div class="line"><a href="{{route('manuales')}}" class="fas fa-book-reader"><font>Manuales</font></a></div>
         <div class="line">
             <li>
                 <a href="#" class=" submenu-toggle fas fa-comments"><font>Foro</font></a>

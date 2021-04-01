@@ -138,4 +138,6 @@ Route::get('/auditoria', function(){
     return view('Auditoria.auditoria', compact('datos'));
 })->name('auditoria');
 
-
+Route::get('/auditoria', function(){
+    return view('privacidad.manuales');
+})->name('manuales');
