@@ -12,8 +12,8 @@
 <div class="container">
 
         <div style=" text-align: center;">
-            {{-- <img src="{{ public_path('storage/logo/Logo_1.png')}}" alt="Logo"> --}}
-            <img src="{{ url('storage/logo/Logo_1.png')}}" alt="Logo">
+            <img src="{{ public_path('storage/logo/Logo_1.png')}}" alt="Logo">
+            {{-- <img src="{{ url('storage/logo/Logo_1.png')}}" alt="Logo"> --}}
 
             <h2>Registro de Ejercicios</h2>
             <h5>Nombres: {{$nombre}}  Apellidos: {{$apellido}}, Documento: {{$documento}}</h5>
