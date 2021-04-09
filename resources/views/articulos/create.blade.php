@@ -23,10 +23,10 @@
                             <label >Título *</label>
                             <input type="text" name="titulo" class="form-control" required>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label >Imagen </label>
                             <input type="file" name="file" >
-                        </div> 
+                        </div>  --}}
 
                         <div class="form-group">
                             <label >Categoria *</label>
